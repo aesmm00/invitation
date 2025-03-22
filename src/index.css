@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: black; */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 
     monospace;
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: 'Decolmax';
+  src: url('./assets/fonts/Decolmax-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'DechoraZone';
+  src: url('./assets/fonts/DechoraZone-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DecomangHold';
+  src: url('./assets/fonts//DecomangHold-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quincento';
+  src: url('./assets/fonts/Quincento\ D.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Decoment';
+  src: url('./assets/fonts/Decoment-Regular.ttf') format('truetype');
 }
