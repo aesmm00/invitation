@@ -2,15 +2,23 @@ import React from 'react';
 import { Container, Typography, Box, Grid2 } from '@mui/material';
 import { styled } from '@mui/system';
 import photo1 from '../../assets/photos/preDebut/photo1.jpg';
+import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
+import homeLandcapeBg from '../../assets/photos/home/homeLandcapeBg.jpg';
 
 // Art Deco styled components
-const ArtDecoContainer = styled(Container)({
+const ArtDecoContainer = styled(Container)(({ theme }) => ({
   backgroundColor: '#000',
   color: '#EEEEEE',
   textAlign: 'center',
   padding: '50px 50px',
   fontFamily: 'Cinzel, serif',
-});
+  backgroundImage: `url(${homeLandcapeBg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  [theme.breakpoints.up('sm')]: {
+    backgroundImage: `url(${homePortraitBg})`,
+  },
+}));
 
 const PhotoCollage = styled(Box)({
   display: 'grid',
@@ -66,6 +74,7 @@ const Home = () => {
                 color='#CF0A0A'
                 marginY={2}
                 fontSize={{xs: '5rem', md: '10rem', xl: '15rem'}}
+                sx={{ textShadow: '2px 2px 4px rgb(0, 0, 0)' }}
             >
                 Adelpha Ellouise
             </Typography>
