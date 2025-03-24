@@ -9,7 +9,7 @@ const NavBar = () => {
         <AppBar position="sticky" style={{ backgroundColor: 'white' }}>
             <Toolbar> {/* Center the content */}
                 <Typography variant="h6" style={{ flexGrow: 1, color: 'black', fontSize: '1.5', letterSpacing: '0.2em' }}>
-                    September 24, 2025 - 6:00 PM
+                    September 23, 2025 - 6:00 PM
                 </Typography>
                 <Typography variant="h6" style={{ color: 'black', fontSize: '1.5rem',  }}>
                     

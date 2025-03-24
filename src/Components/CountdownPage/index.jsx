@@ -22,7 +22,7 @@ const CountdownPage = () => {
             <Typography variant="h3" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2}>
                 Countdown to Debut
             </Typography>
-            <Countdown date={new Date('2025-09-23T00:00:00')} renderer={renderer} />
+            <Countdown date={new Date('2025-09-23T18:00:00')} renderer={renderer} />
         </Container>
     );
 };
