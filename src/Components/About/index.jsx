@@ -2,11 +2,20 @@ import React from 'react';
 import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 import photo1 from '../../assets/photos/preDebut/photo1.jpg';
 import aboutBG from '../../assets/photos/about/aboutBG.webp';
+import homeLandscapeBg from '../../assets/photos/home/homeLandscapeBg.jpg';
+import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
 
 const About = () => {
 
     return (
-        <Container maxWidth="2xl" style={{ padding: '30px 30px', color: '#CF0A0A', backgroundColor: '#000000' }}>
+        <Container 
+        maxWidth="2xl" 
+        style={{ padding: '30px 30px', color: '#CF0A0A', backgroundColor: '#000000', 
+                backgroundImage: `url(${window.innerWidth < 600 ? homePortraitBg : homeLandscapeBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+
+            }}>
             <Typography variant="h2" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2}>
                 About the Debutante
             </Typography>

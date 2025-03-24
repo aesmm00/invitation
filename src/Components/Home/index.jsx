@@ -3,7 +3,7 @@ import { Container, Typography, Box, Grid2 } from '@mui/material';
 import { styled } from '@mui/system';
 import photo1 from '../../assets/photos/preDebut/photo1.jpg';
 import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
-import homeLandcapeBg from '../../assets/photos/home/homeLandcapeBg.jpg';
+import homeLandscapeBg from '../../assets/photos/home/homeLandscapeBg.jpg';
 
 // Art Deco styled components
 const ArtDecoContainer = styled(Container)(({ theme }) => ({
@@ -12,7 +12,7 @@ const ArtDecoContainer = styled(Container)(({ theme }) => ({
   textAlign: 'center',
   padding: '50px 50px',
   fontFamily: 'Cinzel, serif',
-  backgroundImage: `url(${homeLandcapeBg})`,
+  backgroundImage: `url(${homeLandscapeBg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   [theme.breakpoints.up('sm')]: {
