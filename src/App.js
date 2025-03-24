@@ -4,16 +4,26 @@ import Home from './Components/Home';
 import CountdownPage from './Components/CountdownPage';
 import { Divider } from '@mui/material';
 import About from './Components/About';
+import EighteenRoses from './Components/EighteenRoses';
+import EighteenCandles from './Components/EighteenCandles';
+import RSVPSection from './Components/RSVPSection';
 
 function App() {
   return (
     <>
       <Nav/>
+      <Divider style={{ backgroundColor: 'red' }}/>
       <Home/>
       <Divider style={{ backgroundColor: 'red' }}/>
       <CountdownPage/>
       <Divider style={{ backgroundColor: 'red' }}/>
       <About/>
+      <Divider style={{ backgroundColor: 'red' }}/>
+      <EighteenRoses/>
+      <Divider style={{ backgroundColor: 'red' }}/>
+      <EighteenCandles/>
+      <Divider style={{ backgroundColor: 'red' }}/>
+      <RSVPSection/>
     </>
   );
 }
