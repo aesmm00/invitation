@@ -23,7 +23,7 @@ const RSVPSection = () => {
             <Card>
                 <CardContent>
                     <Typography variant="h2" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2} >
-                        RSVP
+                        RSVP - A Night of Elegance Awaits!
                     </Typography>
                     <form onSubmit={handleSubmit}>
                         <div>
