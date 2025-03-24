@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, CardMedia, Container, Typography, List, ListItem } from '@mui/material';
+import { Box, CardMedia, Container, Typography, List, ListItem } from '@mui/material';
 import eighteenRosesBG from '../../assets/photos/eighteenRoses/eighteenRosesBG.jpg';
 import eighteenSidePhoto from '../../assets/photos/eighteenRoses/eighteenSidePhoto.jpg';
 

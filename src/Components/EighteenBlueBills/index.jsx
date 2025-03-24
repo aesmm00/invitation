@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, CardMedia, Container, Typography, List, ListItem } from '@mui/material';
-import eighteenCandlesBG from '../../assets/photos/eighteenCandles/eighteenCandlesBG.jpg';
-import eighteenSidePhoto from '../../assets/photos/eighteenCandles/eighteenSidePhoto.jpg';
+import eighteenBlueBillsBG from '../../assets/photos/eighteenBlueBills/eighteenBlueBillsBG.jpg';
+import eighteenBlueBillsSidePhoto from '../../assets/photos/eighteenBlueBills/eighteenBlueBillsSidePhoto.jpg';
 
 const participants = [
     "Name1",
@@ -17,33 +17,33 @@ const participants = [
     "Name11",
     "Name12",
     "Name13",
-    "Westly Enciso",
-    "Andrea Enciso",
-    "Linda Macavinta",
-    "Edita Magante",
-    "Emma Magante"
+    "Name14",
+    "Name15",
+    "Name16",  
+    "Name17",
+    "Name18"
 ];
 
-const EighteenCandles = () => {
+const EighteenBlueBills = () => {
     const half = Math.ceil(participants.length / 2);
     const firstHalf = participants.slice(0, half);
     const secondHalf = participants.slice(half);
 
     return (
-        <Container maxWidth="2xl" style={{ padding:0, color: '#CF0A0A', backgroundImage: `url(${eighteenCandlesBG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', margin: 0 }} m={0}>
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row-reverse' } }}>
+        <Container maxWidth="2xl" style={{ padding:0, color: '#CF0A0A', backgroundImage: `url(${eighteenBlueBillsBG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', margin: 0 }} m={0}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
                 <CardMedia
                     component="img"
-                    image={eighteenSidePhoto}
+                    image={eighteenBlueBillsSidePhoto}
                     sx={{ width: {xs: '100%', md: 400, lg:700} }}
                     alt="Live from space album cover"
                 />
-                <Box sx={{ display: 'flex', flexDirection: 'column', padding: 2, textShadow: '2px 2px 2px rgb(0, 0, 0)' }} color='#000000' >
+                <Box sx={{ display: 'flex', flexDirection: 'column', padding: 2 }} color='#EEEEEE'>
                     <Typography variant="h2" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2} >
-                        18 Candles – A Light of Hope
+                        18 Blue Bills – A Toast to Prosperity
                     </Typography>
                     <Typography variant="h5" paragraph letterSpacing={2}>
-                        A ceremony where 18 special women in the debutante’s life light candles, symbolizing their wishes and guidance as she steps into adulthood.
+                    Eighteen chosen guests present the debutante with a symbolic gift of a "blue bill" (Philippine 1,000 peso bill) to wish her financial success and abundance.
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: {xs: 'column', sm: 'row'}}}>
                         <List sx={{ pl: {xs: 1, sm: 8} }} >
@@ -71,4 +71,4 @@ const EighteenCandles = () => {
     );
 };
 
-export default EighteenCandles;
+export default EighteenBlueBills;

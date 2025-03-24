@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Radio, RadioGroup, Button, FormControlLabel, Typography, Container, Card, CardContent } from '@mui/material';
+import rsvpSectionBG from '../../assets/photos/rsvpSection/rsvpSectionBG.jpg';
 
 const RSVPSection = () => {
     const [name, setName] = useState('');
@@ -31,8 +32,9 @@ const RSVPSection = () => {
     };
 
     return (
-        <Container style={{ padding: '30px 30px', color: '#000000', backgroundColor: '#EEEEEE'}} maxWidth="2xl">
-            <Card>
+        <Container maxWidth="2xl"
+        style={{ display: 'flex', justifyContent: "center", alignItems: 'center',  padding:'30px 30px', color: '#CF0A0A', backgroundImage: `url(${rsvpSectionBG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
+            <Card sx={{ maxWidth: 500 }}>
                 <CardContent>
                     <Typography variant="h2" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2} >
                         RSVP - A Night of Elegance Awaits!

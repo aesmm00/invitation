@@ -7,6 +7,7 @@ import About from './Components/About';
 import EighteenRoses from './Components/EighteenRoses';
 import EighteenCandles from './Components/EighteenCandles';
 import RSVPSection from './Components/RSVPSection';
+import EighteenBlueBills from './Components/EighteenBlueBills';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <EighteenRoses/>
       <Divider style={{ backgroundColor: 'red' }}/>
       <EighteenCandles/>
+      <EighteenBlueBills/>
       <Divider style={{ backgroundColor: 'red' }}/>
       <RSVPSection/>
     </>
