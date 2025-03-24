@@ -1,28 +1,27 @@
 {
   "files": {
     "main.css": "/invitation/static/css/main.f2fbba89.css",
-    "main.js": "/invitation/static/js/main.5a32688b.js",
+    "main.js": "/invitation/static/js/main.07b147b0.js",
     "static/js/453.21be8fb1.chunk.js": "/invitation/static/js/453.21be8fb1.chunk.js",
     "static/media/eighteenCandlesBG.jpg": "/invitation/static/media/eighteenCandlesBG.78257cab78351403c6a0.jpg",
     "static/media/homePortraitBg.jpg": "/invitation/static/media/homePortraitBg.6665399709b55e2fc8c4.jpg",
-    "static/media/homeLandcapeBg.jpg": "/invitation/static/media/homeLandcapeBg.fd98322b6c8d890fbade.jpg",
-    "static/media/sidePhoto.jpg": "/invitation/static/media/sidePhoto.00658e56c369cb2b0227.jpg",
+    "static/media/homeLandscapeBg.jpg": "/invitation/static/media/homeLandscapeBg.fd98322b6c8d890fbade.jpg",
+    "static/media/eighteenSidePhoto.jpg": "/invitation/static/media/eighteenSidePhoto.5dba3000071b6921af6c.jpg",
     "static/media/photo1.jpg": "/invitation/static/media/photo1.231497eea234f5f2c296.jpg",
     "static/media/aboutBG.webp": "/invitation/static/media/aboutBG.ff6ca41ff8249db7e3dd.webp",
-    "static/media/eighteenSidePhoto.jpg": "/invitation/static/media/eighteenSidePhoto.5dba3000071b6921af6c.jpg",
     "static/media/Quincento D.otf": "/invitation/static/media/Quincento D.40517f10e9b5705954e2.otf",
     "static/media/DechoraZone-Regular.ttf": "/invitation/static/media/DechoraZone-Regular.b06d3f716a6e00ebe679.ttf",
     "static/media/DecomangHold-Regular.ttf": "/invitation/static/media/DecomangHold-Regular.0db2a6bed048df2d46c7.ttf",
     "static/media/Decoment-Regular.ttf": "/invitation/static/media/Decoment-Regular.203b509e2dfef50711db.ttf",
     "static/media/Decolmax-Regular.ttf": "/invitation/static/media/Decolmax-Regular.b75dc85f382fd2ced2f1.ttf",
-    "static/media/EighteenRosesBG.jpg": "/invitation/static/media/EighteenRosesBG.af63294cbe4906eb7434.jpg",
+    "static/media/eighteenRosesBG.jpg": "/invitation/static/media/eighteenRosesBG.af63294cbe4906eb7434.jpg",
     "index.html": "/invitation/index.html",
     "main.f2fbba89.css.map": "/invitation/static/css/main.f2fbba89.css.map",
-    "main.5a32688b.js.map": "/invitation/static/js/main.5a32688b.js.map",
+    "main.07b147b0.js.map": "/invitation/static/js/main.07b147b0.js.map",
     "453.21be8fb1.chunk.js.map": "/invitation/static/js/453.21be8fb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f2fbba89.css",
-    "static/js/main.5a32688b.js"
+    "static/js/main.07b147b0.js"
   ]
 }
