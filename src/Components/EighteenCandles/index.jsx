@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, CardMedia, Container, Typography, List, ListItem } from '@mui/material';
-import eighteenCandlesBG from '../../assets/photos/EighteenCandles/eighteenCandlesBG.jpg';
-import eighteenSidePhoto from '../../assets/photos/EighteenCandles/eighteenSidePhoto.jpg';
+import eighteenCandlesBG from '../../assets/photos/eighteenCandles/eighteenCandlesBG.jpg';
+import eighteenSidePhoto from '../../assets/photos/eighteenCandles/eighteenSidePhoto.jpg';
 
 const participants = [
     "Name1",
