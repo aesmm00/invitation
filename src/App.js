@@ -19,13 +19,10 @@ function App() {
       <CountdownPage/>
       <Divider style={{ backgroundColor: 'red' }}/>
       <About/>
-      <Divider style={{ backgroundColor: 'red' }}/>
+      <RSVPSection/>
       <EighteenRoses/>
-      <Divider style={{ backgroundColor: 'red' }}/>
       <EighteenCandles/>
       <EighteenBlueBills/>
-      <Divider style={{ backgroundColor: 'red' }}/>
-      <RSVPSection/>
     </>
   );
 }

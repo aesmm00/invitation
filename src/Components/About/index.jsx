@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 import photo1 from '../../assets/photos/preDebut/photo1.jpg';
 import aboutBG from '../../assets/photos/about/aboutBG.webp';
-import homeLandscapeBg from '../../assets/photos/home/homeLandscapeBg.jpg';
-import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
+import aboutLandscapeBg from '../../assets/photos/about/aboutLandscapeBg.jpg';
+import aboutPortraitBg from '../../assets/photos/about/aboutPortraitBg.jpg';
 
 const About = () => {
 
@@ -11,7 +11,7 @@ const About = () => {
         <Container 
         maxWidth="2xl" 
         style={{ padding: '30px 30px', color: '#CF0A0A', backgroundColor: '#000000', 
-                backgroundImage: `url(${window.innerWidth < 600 ? homePortraitBg : homeLandscapeBg})`,
+                backgroundImage: `url(${window.innerWidth < 600 ? aboutPortraitBg : aboutLandscapeBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
 

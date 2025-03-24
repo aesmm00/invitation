@@ -15,7 +15,7 @@ const ArtDecoContainer = styled(Container)(({ theme }) => ({
   backgroundImage: `url(${homeLandscapeBg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.down('sm')]: {
     backgroundImage: `url(${homePortraitBg})`,
   },
 }));
