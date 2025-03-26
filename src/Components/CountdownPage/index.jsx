@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Countdown from 'react-countdown';
 import './flipCountdown.css'; // Import the CSS for flip effect
 
@@ -18,12 +18,9 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 const CountdownPage = () => {
 
     return (
-        <Container style={{ textAlign: 'center', padding: '30px 30px', color: '#CF0A0A', backgroundColor: '#EEEEEE'}} maxWidth="2xl">
-            <Typography variant="h3" component="h1" gutterBottom fontFamily={'"DecomangHold"'} letterSpacing={2}>
-                Countdown to Debut
-            </Typography>
+        <>
             <Countdown date={new Date('2025-09-23T18:00:00')} renderer={renderer} />
-        </Container>
+        </>
     );
 };
 

@@ -1,29 +1,79 @@
+import React, { useRef } from 'react';
 import './App.css';
 import Nav from './Components/Nav';
 import Home from './Components/Home';
-import CountdownPage from './Components/CountdownPage';
 import { Divider } from '@mui/material';
 import About from './Components/About';
 import EighteenRoses from './Components/EighteenRoses';
 import EighteenCandles from './Components/EighteenCandles';
 import RSVPSection from './Components/RSVPSection';
 import EighteenBlueBills from './Components/EighteenBlueBills';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  ...theme.mixins.toolbar,
+}));
+
 
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const rsvpRef = useRef(null);
+  const rosesRef = useRef(null);
+  const candlesRef = useRef(null);
+  const blueBillsRef = useRef(null);
+
+  const handleNavClick = (section) => {
+    const scrollToSection = (ref) => {
+      const element = ref.current;
+      const yOffset = -64;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+
+    switch (section) {
+      case 'home':
+        scrollToSection(homeRef);
+        break;
+      case 'about':
+        scrollToSection(aboutRef);
+        break;
+      case 'rsvp':
+        scrollToSection(rsvpRef);
+        break;
+      case 'roses':
+        scrollToSection(rosesRef);
+        break;
+      case 'candles':
+        scrollToSection(candlesRef);
+        break;
+      case 'blueBills':
+        scrollToSection(blueBillsRef);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
-    <>
-      <Nav/>
-      <Divider style={{ backgroundColor: 'red' }}/>
-      <Home/>
-      <Divider style={{ backgroundColor: 'red' }}/>
-      <CountdownPage/>
-      <Divider style={{ backgroundColor: 'red' }}/>
-      <About/>
-      <RSVPSection/>
-      <EighteenRoses/>
-      <EighteenCandles/>
-      <EighteenBlueBills/>
-    </>
+    <Box sx={{ backgroundColor: '#f0f0f0' }}>
+      <Nav onNavClick={handleNavClick} />
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        <DrawerHeader />
+        <Divider style={{ backgroundColor: 'red' }} />
+        <div ref={homeRef}><Home /></div>
+        <div ref={aboutRef}><About /></div>
+        <div ref={rosesRef}><EighteenRoses /></div>
+        <div ref={candlesRef}><EighteenCandles /></div>
+        <div ref={blueBillsRef}><EighteenBlueBills /></div>
+        <div ref={rsvpRef}><RSVPSection /></div>
+      </Box>
+    </Box>
   );
 }
 
