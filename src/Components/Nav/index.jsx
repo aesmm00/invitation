@@ -48,7 +48,10 @@ const NavBar = ({ onNavClick }) => {
     return (
         <AppBar style={{ backgroundColor: 'white' }}>
             <Toolbar>
-                <Typography variant="h6" style={{ flexGrow: 1, color: 'black', fontSize: '1.5rem', letterSpacing: '0.2em' }}>
+                <Typography  
+                    style={{ flexGrow: 1, color: 'black', letterSpacing: '0.2em' }}
+                    fontSize={{sm: '1rem', md: '2rem'}}
+                >
                     A Night of Glitz & Glamour                
                 </Typography>
                 {isMobile ? (
