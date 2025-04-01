@@ -9,15 +9,6 @@ import EighteenCandles from './Components/EighteenCandles';
 import RSVPSection from './Components/RSVPSection';
 import EighteenBlueBills from './Components/EighteenBlueBills';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  ...theme.mixins.toolbar,
-}));
 
 
 function App() {
@@ -31,7 +22,7 @@ function App() {
   const handleNavClick = (section) => {
     const scrollToSection = (ref) => {
       const element = ref.current;
-      const yOffset = -64;
+      const yOffset = 0;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     };
@@ -63,8 +54,7 @@ function App() {
   return (
     <Box sx={{ backgroundColor: '#f0f0f0' }}>
       <Nav onNavClick={handleNavClick} />
-      <Box component="main" sx={{ flexGrow: 1 }}>
-        <DrawerHeader />
+      <Box component="main" sx={{ flexGrow: 1, p: 0, mt: 0 }}>
         <Divider style={{ backgroundColor: 'red' }} />
         <div ref={homeRef}><Home /></div>
         <div ref={aboutRef}><About /></div>
