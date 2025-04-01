@@ -118,7 +118,7 @@ const Home = () => {
 
             <DecorativeLine />
 
-            <Typography variant="h6" sx={{ marginTop: 4, color: '#FFFFFF', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' } }}>
+            <Typography variant="h6" sx={{ marginTop: 4, color: '#FFFFFF', fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } }}>
               Join us for an unforgettable evening of jazz, champagne, and merriment
             </Typography>
           </Grid>
