@@ -22,7 +22,7 @@ function App() {
   const handleNavClick = (section) => {
     const scrollToSection = (ref) => {
       const element = ref.current;
-      const yOffset = 0;
+      const yOffset = -64;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     };
