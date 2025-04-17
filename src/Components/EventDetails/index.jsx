@@ -1,0 +1,407 @@
+import React from 'react';
+import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import { styled } from '@mui/system';
+import CountdownTimer from '../CountdownTimer';
+import { keyframes } from '@emotion/react';
+import eventDetailsLandscapeBg from '../../assets/photos/eventDetails/eventDetailsLandscapeBg.jpg';
+import eventDetailsPortraitBg from '../../assets/photos/eventDetails/eventDetailsPortraitBg.jpg';
+
+const shimmer = keyframes`
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; }
+`;
+
+const borderGlow = keyframes`
+  0% { box-shadow: 0 0 5px #CF0A0A; }
+  50% { box-shadow: 0 0 20px #CF0A0A; }
+  100% { box-shadow: 0 0 5px #CF0A0A; }
+`;
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(8, 0),
+  color: '#CF0A0A',
+  position: 'relative',
+  backgroundImage: `url(${eventDetailsLandscapeBg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundAttachment: 'fixed',
+  [theme.breakpoints.down('sm')]: {
+    backgroundImage: `url(${eventDetailsPortraitBg})`,
+  },
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    zIndex: 1,
+  },
+  '& > *': {
+    position: 'relative',
+    zIndex: 2,
+  }
+}));
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(3),
+  backgroundColor: 'rgba(26, 26, 26, 0.7)',
+  border: '1px solid #CF0A0A',
+  animation: `${borderGlow} 3s infinite`,
+  transition: 'transform 0.3s ease',
+  '&:hover': {
+    transform: 'scale(1.02)',
+  }
+}));
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  marginBottom: theme.spacing(4),
+  fontFamily: '"DechoraZone", sans-serif',
+  color: '#CF0A0A',
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+  position: 'relative',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-10px',
+    left: '0',
+    width: '40px',
+    height: '2px',
+    background: '#CF0A0A',
+    animation: `${shimmer} 3s infinite`,
+  }
+}));
+
+const StyledBodyTypography = styled(Typography)(({ theme }) => ({
+  fontFamily: '"Decoment", sans-serif',
+  color: '#FFFFFF',
+  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+  marginBottom: theme.spacing(1),
+  transition: 'color 0.3s ease',
+  '&:hover': {
+    color: '#FF1E1E',
+  }
+}));
+
+const MapContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '300px',
+  border: '1px solid #CF0A0A',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    border: '2px solid transparent',
+    background: 'linear-gradient(45deg, #CF0A0A, transparent) border-box',
+    WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+    WebkitMaskComposite: 'destination-out',
+    maskComposite: 'exclude',
+  }
+}));
+
+const EventDetails = () => {
+  return (
+    <StyledBox>
+      <Container maxWidth="md">
+        <StyledTypography variant="h2" align="center" gutterBottom>
+          When & Where
+        </StyledTypography>
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <StyledPaper elevation={3}>
+              <Grid container spacing={4}>
+                <Grid item xs={12} md={4}>
+                  <StyledTypography variant="h5">Date</StyledTypography>
+                  <StyledBodyTypography variant="body1">Saturday, September 27, 2025</StyledBodyTypography>
+
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <StyledTypography variant="h5">Time</StyledTypography>
+                  <StyledBodyTypography variant="body1">6:00 PM - 10:00 PM</StyledBodyTypography>
+                  <StyledBodyTypography variant="body2" sx={{ fontStyle: 'italic', mt: 2 }}>
+                    Join us for an unforgettable evening of celebration and glamour
+                  </StyledBodyTypography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <StyledTypography variant="h5">Where</StyledTypography>
+                  <StyledBodyTypography variant="body1">The Grand Gatsby Ballroom</StyledBodyTypography>
+                  <StyledBodyTypography variant="body1">123 Roaring Twenties Avenue</StyledBodyTypography>
+                  <StyledBodyTypography variant="body1">Manila, Philippines</StyledBodyTypography>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(207, 10, 10, 0.3)' }}>
+                    <CountdownTimer targetDate="2025-09-27T20:00:00" />
+                  </Box>
+            </StyledPaper>
+          </Grid>
+          <Grid item xs={12}>
+            <MapContainer>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.802548850011!2d121.04128661478882!3d14.553732589828378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8efd99aad53%3A0xb64b39847a866fde!2sShangrila%20The%20Fort!5e0!3m2!1sen!2sph!4v1650123456789!5m2!1sen!2sph"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </MapContainer>
+          </Grid>
+          <Grid item xs={12}>
+            <StyledPaper elevation={3}>
+              <StyledTypography variant="h5">Dress Code: Black & Red Attire</StyledTypography>
+              <StyledBodyTypography variant="body1" sx={{ mb: 3 }}>
+                Any outfit is allowed, but it must prominently feature black and red colors. We encourage creativity while adhering to this color scheme. For those who wish to embrace our theme, we welcome 1920s Gatsby-inspired elements:
+              </StyledBodyTypography>
+              <Grid container spacing={4}>
+                <Grid item xs={12} md={6}>
+                  <Box sx={{
+                    border: '1px solid #CF0A0A',
+                    p: 2,
+                    borderRadius: 1,
+                    position: 'relative',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(45deg, rgba(207, 10, 10, 0.1), transparent)',
+                      pointerEvents: 'none',
+                    }
+                  }}>
+                    <StyledBodyTypography variant="body1" sx={{ mb: 2, textAlign: 'center' }}>
+                      Ladies
+                    </StyledBodyTypography>
+                    <Grid container spacing={2} sx={{ mb: 2 }}>
+                      <Grid item xs={6}>
+                        <Box sx={{
+                          width: '100%',
+                          height: '250px',
+                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          border: '1px solid #CF0A0A',
+                          borderRadius: 1,
+                          overflow: 'hidden',
+                          position: 'relative'
+                        }}>
+                          <img 
+                            src={require('../../assets/photos/dressCode/ladies/formalAndSemiFormal.jpg')}
+                            alt="Ladies Formal Attire"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover'
+                            }}
+                          />
+                          <Typography 
+                            sx={{ 
+                              position: 'absolute',
+                              bottom: 0,
+                              width: '100%',
+                              backgroundColor: 'rgba(0,0,0,0.85)',
+                              color: '#FFFFFF',
+                              padding: '4px',
+                              textAlign: 'center',
+                              fontSize: '0.8rem',
+                              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
+                            }}
+                          >
+                            Formal/Semi-Formal
+                          </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Box sx={{
+                          width: '100%',
+                          height: '250px',
+                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          border: '1px solid #CF0A0A',
+                          borderRadius: 1,
+                          overflow: 'hidden',
+                          position: 'relative'
+                        }}>
+                          <img 
+                            src={require('../../assets/photos/dressCode/ladies/gatsbyOutfit.jpg')}
+                            alt="Ladies Gatsby Attire"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover'
+                            }}
+                          />
+                          <Typography 
+                            sx={{ 
+                              position: 'absolute',
+                              bottom: 0,
+                              width: '100%',
+                              backgroundColor: 'rgba(0,0,0,0.7)',
+                              color: '#fff',
+                              padding: '4px',
+                              textAlign: 'center',
+                              fontSize: '0.8rem'
+                            }}
+                          >
+                            Gatsby-Inspired
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left' }}>
+                      • Black dresses with red accessories or vice versa<br/>
+                      • Red and black patterned or color-blocked outfits<br/>
+                      • Black attire with red statement pieces<br/>
+                      • Any style of dress or outfit in black and red<br/>
+                      • Accessories in black and red tones
+                    </StyledBodyTypography>
+                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left', mt: 2, fontStyle: 'italic' }}>
+                      Optional Gatsby-inspired elements:<br/>
+                      • Flapper-style dresses in black or red<br/>
+                      • Art Deco-inspired jewelry<br/>
+                      • Feather boas, headbands, or long pearl necklaces
+                    </StyledBodyTypography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Box sx={{
+                    border: '1px solid #CF0A0A',
+                    p: 2,
+                    borderRadius: 1,
+                    position: 'relative',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(45deg, rgba(207, 10, 10, 0.1), transparent)',
+                      pointerEvents: 'none',
+                    }
+                  }}>
+                    <StyledBodyTypography variant="body1" sx={{ mb: 2, textAlign: 'center' }}>
+                      Gentlemen
+                    </StyledBodyTypography>
+                    <Grid container spacing={2} sx={{ mb: 2 }}>
+                      <Grid item xs={6}>
+                        <Box sx={{
+                          width: '100%',
+                          height: '250px',
+                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          border: '1px solid #CF0A0A',
+                          borderRadius: 1,
+                          overflow: 'hidden',
+                          position: 'relative'
+                        }}>
+                          <img 
+                            src={require('../../assets/photos/dressCode/gentleman/formalAndSemiFormal.jpg')}
+                            alt="Men's Formal Attire"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover'
+                            }}
+                          />
+                          <Typography 
+                            sx={{ 
+                              position: 'absolute',
+                              bottom: 0,
+                              width: '100%',
+                              backgroundColor: 'rgba(0,0,0,0.7)',
+                              color: '#fff',
+                              padding: '4px',
+                              textAlign: 'center',
+                              fontSize: '0.8rem'
+                            }}
+                          >
+                            Formal/Semi-Formal
+                          </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Box sx={{
+                          width: '100%',
+                          height: '250px',
+                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          border: '1px solid #CF0A0A',
+                          borderRadius: 1,
+                          overflow: 'hidden',
+                          position: 'relative'
+                        }}>
+                          <img 
+                            src={require('../../assets/photos/dressCode/gentleman/gatsbyOutfit.jpg')}
+                            alt="Men's Gatsby Attire"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover'
+                            }}
+                          />
+                          <Typography 
+                            sx={{ 
+                              position: 'absolute',
+                              bottom: 0,
+                              width: '100%',
+                              backgroundColor: 'rgba(0,0,0,0.7)',
+                              color: '#fff',
+                              padding: '4px',
+                              textAlign: 'center',
+                              fontSize: '0.8rem'
+                            }}
+                          >
+                            Gatsby-Inspired
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left' }}>
+                      • Black suits or blazers with red shirts or accessories<br/>
+                      • Red and black patterned or color-blocked outfits<br/>
+                      • Black attire with red statement pieces<br/>
+                      • Any style of outfit combining black and red<br/>
+                      • Accessories in black and red tones
+                    </StyledBodyTypography>
+                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left', mt: 2, fontStyle: 'italic' }}>
+                      Optional Gatsby-inspired elements:<br/>
+                      • Pinstripe suits in black with red accents<br/>
+                      • Art Deco-inspired cufflinks or tie clips<br/>
+                      • Fedoras or newsboy caps in black or red
+                    </StyledBodyTypography>
+                  </Box>
+                </Grid>
+              </Grid>
+              <StyledBodyTypography variant="body2" sx={{ mt: 3, fontStyle: 'italic', textAlign: 'center' }}>
+                Remember, your outfit must prominently feature black and red colors. Feel free to be creative while adhering to this color scheme. Gatsby-inspired elements are welcome to enhance the 1920s theme of our celebration!
+              </StyledBodyTypography>
+            </StyledPaper>
+          </Grid>
+        </Grid>
+      </Container>
+    </StyledBox>
+  );
+};
+
+export default EventDetails;

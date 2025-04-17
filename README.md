@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Debutante Birthday Invitation Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based website for a debutante's 18th birthday celebration. It features a Gatsby-inspired design and includes various sections to showcase different aspects of the event.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive design with a Gatsby-inspired theme
+- Navigation bar for easy access to different sections
+- Home page with a photo collage
+- About section for event details
+- Multiple "Eighteen" sections (Roses, Candles, Blue Bills, Treasure)
+- RSVP section for guest responses
+- Integration with Google Sheets API for dynamic content
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm start
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+- `src/Components/`: Contains all React components
+  - `EighteenSection/`: Reusable component for "Eighteen" sections
+  - `Home/`: Home page component
+  - `About/`: About section component
+  - `EighteenRoses/`: Eighteen Roses section
+  - `EighteenCandles/`: Eighteen Candles section
+  - `EighteenBlueBills/`: Eighteen Blue Bills section
+  - `EighteenTreasure/`: Eighteen Treasure section
+  - `RSVPSection/`: RSVP form component
+  - `Nav/`: Navigation bar component
+- `src/assets/`: Contains images and other static assets
+- `src/App.js`: Main application component
+- `src/index.js`: Entry point of the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `npm run build`
+- React
+- Material-UI
+- Axios (for API requests)
+- Emotion (for styled components)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## External Services
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project uses Google Sheets API to fetch dynamic content for the "Eighteen" sections. Ensure you have the correct API endpoint set up in the respective components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Customization
 
-### `npm run eject`
+To customize the content or styling:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Update the text in the respective components
+2. Modify the styled components in each section for design changes
+3. Replace images in the `src/assets/` directory
+4. Update the Google Sheets API endpoint if necessary
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow the standard React deployment process. You can use services like Netlify, Vercel, or GitHub Pages for easy deployment.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For more information on deployment, check out the [Create React App deployment documentation](https://facebook.github.io/create-react-app/docs/deployment).
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
