@@ -10,6 +10,7 @@ import RSVPSection from './Components/RSVPSection';
 import EighteenBlueBills from './Components/EighteenBlueBills';
 import EighteenTreasure from './Components/EighteenTreasure';
 import EventDetails from './Components/EventDetails';
+import Footer from './Components/Footer';
 import Box from '@mui/material/Box';
 
 
@@ -75,6 +76,7 @@ function App() {
         <div ref={treasureRef}><EighteenTreasure /></div>
         <div ref={rsvpRef}><RSVPSection /></div>
       </Box>
+      <Footer />
     </Box>
   );
 }
