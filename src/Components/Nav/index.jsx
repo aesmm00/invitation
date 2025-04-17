@@ -231,7 +231,7 @@ const NavBar = ({ onNavClick }) => {
     const menuItems = [
         { text: 'Home', onClick: () => onNavClick('home') },
         { text: 'About', onClick: () => onNavClick('about') },
-        { text: 'Event Details', onClick: () => onNavClick('eventDetails') },
+        { text: 'Event', onClick: () => onNavClick('eventDetails') },
         { text: '18 Roses', onClick: () => onNavClick('roses') },
         { text: '18 Candles', onClick: () => onNavClick('candles') },
         { text: '18 Blue Bills', onClick: () => onNavClick('blueBills') },
