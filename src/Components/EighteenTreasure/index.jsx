@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EighteenSection from '../EighteenSection';
-import eighteenCandlesBG from '../../assets/photos/eighteenCandles/eighteenCandlesBG.jpg';
-import eighteenSidePhoto from '../../assets/photos/eighteenCandles/eighteenSidePhoto.jpg';
+import eighteenTreasureBG from '../../assets/photos/eighteenTreasure/eighteenTreasureBG.jpg';
+import eighteenTreasureSidePhoto from '../../assets/photos/eighteenTreasure/eighteenTreasureSidePhoto.jpg';
 
-const EighteenCandles = () => {
+const EighteenTreasure = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState("");
     
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://script.google.com/macros/s/AKfycbw1T_Gf1k37jAYAhtC-ozc8QcsKrQ2ug79VvSPDMaScCc7Gm3EUhZw1eQQlOhE4OTHB/exec?sheet=EighteenCandles`);
+                const response = await axios.get(`https://script.google.com/macros/s/AKfycbw1T_Gf1k37jAYAhtC-ozc8QcsKrQ2ug79VvSPDMaScCc7Gm3EUhZw1eQQlOhE4OTHB/exec?sheet=EighteenTreasure`);
                 if (response.data.error) {
                     setError(response.data.error);
                 } else {
@@ -28,11 +28,11 @@ const EighteenCandles = () => {
 
     return (
         <EighteenSection
-            backgroundImage={eighteenCandlesBG}
-            sideImage={eighteenSidePhoto}
-            title="18 Candles"
-            subtitle="Illuminating Wishes and Dreams"
-            description="Cherished women light the path ahead, each flame carrying wisdom and blessings for the debutante"
+            backgroundImage={eighteenTreasureBG}
+            sideImage={eighteenTreasureSidePhoto}
+            title="18 Treasure"
+            subtitle="Gifts of Wisdom and Fortune"
+            description="Esteemed guests present meaningful treasures, each symbolizing blessings and guidance for the debutante's journey ahead"
             data={data}
             error={error}
             imageOnLeft={false}
@@ -40,4 +40,4 @@ const EighteenCandles = () => {
     );
 };
 
-export default EighteenCandles;
+export default EighteenTreasure;

@@ -8,6 +8,7 @@ import EighteenRoses from './Components/EighteenRoses';
 import EighteenCandles from './Components/EighteenCandles';
 import RSVPSection from './Components/RSVPSection';
 import EighteenBlueBills from './Components/EighteenBlueBills';
+import EighteenTreasure from './Components/EighteenTreasure';
 import Box from '@mui/material/Box';
 
 
@@ -18,6 +19,7 @@ function App() {
   const rosesRef = useRef(null);
   const candlesRef = useRef(null);
   const blueBillsRef = useRef(null);
+  const treasureRef = useRef(null);
 
   const handleNavClick = (section) => {
     const scrollToSection = (ref) => {
@@ -46,6 +48,9 @@ function App() {
       case 'blueBills':
         scrollToSection(blueBillsRef);
         break;
+      case 'treasure':
+        scrollToSection(treasureRef);
+        break;
       default:
         break;
     }
@@ -61,6 +66,7 @@ function App() {
         <div ref={rosesRef}><EighteenRoses /></div>
         <div ref={candlesRef}><EighteenCandles /></div>
         <div ref={blueBillsRef}><EighteenBlueBills /></div>
+        <div ref={treasureRef}><EighteenTreasure /></div>
         <div ref={rsvpRef}><RSVPSection /></div>
       </Box>
     </Box>

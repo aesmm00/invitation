@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
 import { styled } from '@mui/system';
-import photo1 from '../../assets/photos/preDebut/photo1.jpg';
+import photo1 from '../../assets/photos/preDebut/PHOTO1.JPEG';
+import photo2 from '../../assets/photos/preDebut/PHOTO2.jpg';
+import photo3 from '../../assets/photos/preDebut//PHOTO3.jpg';
+import photo4 from '../../assets/photos/preDebut/PHOTO4.JPEG';
 import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
 import homeLandscapeBg from '../../assets/photos/home/homeLandscapeBg.jpg';
 
@@ -40,37 +43,41 @@ const ContentWrapper = styled(Box)({
 const PhotoCollage = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  paddingTop: '100%', // 1:1 Aspect ratio
-  [theme.breakpoints.up('sm')]: {
-    paddingTop: '75%', // 4:3 Aspect ratio
-  },
-  [theme.breakpoints.up('md')]: {
-    paddingTop: '56.25%', // 16:9 Aspect ratio
-  },
+  paddingTop: '75%', // 4:3 aspect ratio
+  margin: '40px 0', // Add margin to accommodate overlapping photos
 }));
 
 const PhotoLarge = styled('img')(({ theme }) => ({
   position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '85%',
+  height: '85%',
   objectFit: 'cover',
+  border: '15px solid white',
+  borderRadius: '2px',
+  boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
+  zIndex: 1,
 }));
 
 const PhotoSmall = styled('img')(({ theme }) => ({
   position: 'absolute',
-  width: '30%',
+  width: '25%',
   height: 'auto',
   objectFit: 'cover',
-  border: '4px solid white',
+  border: '8px solid white',
   backgroundColor: 'white',
-  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-  [theme.breakpoints.up('sm')]: {
-    border: '6px solid white',
+  boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+  transition: 'all 0.3s ease-in-out',
+  zIndex: 2,
+  '&:hover': {
+    transform: 'scale(1.05) rotate(0deg) !important',
+    zIndex: 3,
   },
-  [theme.breakpoints.up('md')]: {
-    border: '8px solid white',
+  [theme.breakpoints.down('sm')]: {
+    width: '30%',
+    border: '6px solid white',
   },
 }));
 
@@ -125,35 +132,38 @@ const Home = () => {
 
           <Grid item xs={12} md={6}>
             <PhotoCollage>
-              <PhotoLarge src={photo1} alt="Adelpha Ellouise" />
+              <PhotoLarge 
+                src={photo2} 
+                alt="Adelpha Ellouise Main"
+                sx={{
+                  objectPosition: 'center 20%',
+                }}
+              />
               <PhotoSmall 
                 src={photo1} 
-                alt="Celebration 1" 
+                alt="Celebration Mirror" 
                 sx={{ 
-                  top: '5%', 
-                  right: '10%', 
+                  top: '-5%',
+                  left: '0',
                   transform: 'rotate(-8deg)',
-                  zIndex: 3 
                 }}
               />
               <PhotoSmall 
-                src={photo1} 
-                alt="Celebration 2" 
+                src={photo3} 
+                alt="Celebration Dress" 
                 sx={{ 
-                  top: '35%', 
-                  right: '5%', 
-                  transform: 'rotate(5deg)',
-                  zIndex: 2 
+                  top: '-5%',
+                  right: '0',
+                  transform: 'rotate(8deg)',
                 }}
               />
               <PhotoSmall 
-                src={photo1} 
-                alt="Celebration 3" 
+                src={photo4} 
+                alt="Celebration Full" 
                 sx={{ 
-                  bottom: '5%', 
-                  right: '15%', 
+                  bottom: '-5%',
+                  right: '0',
                   transform: 'rotate(-5deg)',
-                  zIndex: 1 
                 }}
               />
             </PhotoCollage>
