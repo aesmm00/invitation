@@ -11,6 +11,7 @@ const RSVPContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  min-height: 100vh;
 `;
 
 const GatsbyCard = styled.div`
