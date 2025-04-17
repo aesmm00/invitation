@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
 import { styled } from '@mui/system';
-import photo1 from '../../assets/photos/preDebut/PHOTO1.JPEG';
-import photo2 from '../../assets/photos/preDebut/PHOTO2.jpg';
-import photo3 from '../../assets/photos/preDebut//PHOTO3.jpg';
-import photo4 from '../../assets/photos/preDebut/PHOTO4.JPEG';
+import photoLarge from '../../assets/photos/preDebut/photoLarge.jpg';
+import photoSmall1 from '../../assets/photos/preDebut/photoSmall1.jpg';
+import photoSmall2 from '../../assets/photos/preDebut/photoSmall2.jpg';
+import photoSmall3 from '../../assets/photos/preDebut/photoSmall3.jpg';
 import homePortraitBg from '../../assets/photos/home/homePortraitBg.jpg';
 import homeLandscapeBg from '../../assets/photos/home/homeLandscapeBg.jpg';
 
@@ -133,14 +133,14 @@ const Home = () => {
           <Grid item xs={12} md={6}>
             <PhotoCollage>
               <PhotoLarge 
-                src={photo2} 
+                src={photoLarge} 
                 alt="Adelpha Ellouise Main"
                 sx={{
                   objectPosition: 'center 20%',
                 }}
               />
               <PhotoSmall 
-                src={photo1} 
+                src={photoSmall1} 
                 alt="Celebration Mirror" 
                 sx={{ 
                   top: '-5%',
@@ -149,7 +149,7 @@ const Home = () => {
                 }}
               />
               <PhotoSmall 
-                src={photo3} 
+                src={photoSmall2} 
                 alt="Celebration Dress" 
                 sx={{ 
                   top: '-5%',
@@ -158,7 +158,7 @@ const Home = () => {
                 }}
               />
               <PhotoSmall 
-                src={photo4} 
+                src={photoSmall3} 
                 alt="Celebration Full" 
                 sx={{ 
                   bottom: '-5%',

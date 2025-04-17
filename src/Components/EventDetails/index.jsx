@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Container, Grid, Paper, Modal } from '@mui/material';
 import { styled } from '@mui/system';
 import CountdownTimer from '../CountdownTimer';
 import { keyframes } from '@emotion/react';
@@ -107,6 +107,16 @@ const MapContainer = styled(Box)(({ theme }) => ({
 }));
 
 const EventDetails = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const handleClose = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <StyledBox>
       <Container maxWidth="md">
@@ -151,6 +161,7 @@ const EventDetails = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map of Event Location"
               />
             </MapContainer>
           </Grid>
@@ -202,8 +213,13 @@ const EventDetails = () => {
                             style={{
                               width: '100%',
                               height: '100%',
-                              objectFit: 'cover'
+                              objectFit: 'cover',
+                              cursor: 'pointer'
                             }}
+                            onClick={() => handleImageClick({
+                              src: require('../../assets/photos/dressCode/ladies/formalAndSemiFormal.jpg'),
+                              alt: "Ladies Formal Attire"
+                            })}
                           />
                           <Typography 
                             sx={{ 
@@ -242,8 +258,13 @@ const EventDetails = () => {
                             style={{
                               width: '100%',
                               height: '100%',
-                              objectFit: 'cover'
+                              objectFit: 'cover',
+                              cursor: 'pointer'
                             }}
+                            onClick={() => handleImageClick({
+                              src: require('../../assets/photos/dressCode/ladies/gatsbyOutfit.jpg'),
+                              alt: "Ladies Gatsby Attire"
+                            })}
                           />
                           <Typography 
                             sx={{ 
@@ -318,8 +339,13 @@ const EventDetails = () => {
                             style={{
                               width: '100%',
                               height: '100%',
-                              objectFit: 'cover'
+                              objectFit: 'cover',
+                              cursor: 'pointer'
                             }}
+                            onClick={() => handleImageClick({
+                              src: require('../../assets/photos/dressCode/gentleman/formalAndSemiFormal.jpg'),
+                              alt: "Men's Formal Attire"
+                            })}
                           />
                           <Typography 
                             sx={{ 
@@ -357,8 +383,13 @@ const EventDetails = () => {
                             style={{
                               width: '100%',
                               height: '100%',
-                              objectFit: 'cover'
+                              objectFit: 'cover',
+                              cursor: 'pointer'
                             }}
+                            onClick={() => handleImageClick({
+                              src: require('../../assets/photos/dressCode/gentleman/gatsbyOutfit.jpg'),
+                              alt: "Men's Gatsby Attire"
+                            })}
                           />
                           <Typography 
                             sx={{ 
@@ -400,6 +431,41 @@ const EventDetails = () => {
           </Grid>
         </Grid>
       </Container>
+      <Modal
+        open={Boolean(selectedImage)}
+        onClose={handleClose}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          '& .MuiBackdrop-root': {
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          }
+        }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            maxWidth: '90vw',
+            maxHeight: '90vh',
+            outline: 'none',
+          }}
+        >
+          {selectedImage && (
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                cursor: 'pointer',
+              }}
+              onClick={handleClose}
+            />
+          )}
+        </Box>
+      </Modal>
     </StyledBox>
   );
 };
