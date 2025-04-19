@@ -217,7 +217,8 @@ const RSVPSection = ({ onSubmit }) => {
     const handleCloseAlert = () => {
         setShowAlert(false);
         setIsEditing(false);
-        window.location.reload();
+        const currentHash = window.location.hash;
+        window.location.href = window.location.origin + window.location.pathname + currentHash;
     };
 
     const validate = () => {
