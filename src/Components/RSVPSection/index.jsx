@@ -239,7 +239,10 @@ const RSVPSection = ({ onSubmit }) => {
                     attending 
                 })).unwrap();
                 setIsEditing(false);
-                setAlertMessage('Thank you for submitting your response!');
+                setAlertMessage(attending === 'Accepted' ? 
+                    'Thank you for accepting! A calendar invite has been sent to your email.' :
+                    'Thank you for submitting your response!'
+                );
                 setShowAlert(true);
 
             } catch (error) {

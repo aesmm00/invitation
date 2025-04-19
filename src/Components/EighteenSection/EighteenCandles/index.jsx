@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import EighteenSection from '..';
-import eighteenCandlesBG from '../../../assets/photos/eighteenCandles/eighteenCandlesBG.jpg';
-import eighteenSidePhoto from '../../../assets/photos/eighteenCandles/eighteenSidePhoto.jpg';
+import eighteenCandlesBG from '../../../assets/photos/EighteenCandles/eighteenCandlesBG.jpg';
+import eighteenSidePhoto from '../../../assets/photos/EighteenCandles/eighteenSidePhoto.jpg';
 import { fetchEighteenData } from '../../../redux/eighteens/actions';
 import { selectEighteenData, selectEighteenError, selectEighteenLoading } from '../../../redux/eighteens/selectors';
 import { useAppDispatch } from '../../../redux/hooks';
