@@ -135,7 +135,7 @@ const App = () => {
     <Box sx={{ backgroundColor: '#f0f0f0' }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
+          <Route path="invitation/" element={
             <Box sx={{ 
               display: 'flex', 
               justifyContent: 'center', 
@@ -151,7 +151,7 @@ const App = () => {
               </Typography>
             </Box>
           } />
-          <Route path="/:code" element={<ProtectedRoute />} />
+          <Route path="invitation/:code" element={<ProtectedRoute />} />
         </Routes>
       </BrowserRouter>
     </Box>
