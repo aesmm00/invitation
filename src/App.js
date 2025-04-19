@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { HashRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 import Nav from './Components/Nav';
@@ -133,7 +133,7 @@ const ProtectedRoute = () => {
 const App = () => {
   return (
     <Box sx={{ backgroundColor: '#f0f0f0' }}>
-      <HashRouter>
+      <Router basename="/invitation">
         <Routes>
           <Route path="/" element={
             <Box sx={{ 
@@ -153,7 +153,7 @@ const App = () => {
           } />
           <Route path="/:code" element={<ProtectedRoute />} />
         </Routes>
-      </HashRouter>
+      </Router>
     </Box>
   );
 };
