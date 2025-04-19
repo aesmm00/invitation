@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, CardMedia, Container, Typography, List, ListItem } from '@mui/material';
+import { Box, CardMedia, Container, Typography, List, ListItem, CircularProgress } from '@mui/material';
 import styled from '@emotion/styled';
 
 const GatsbyContainer = styled(Container)`
@@ -72,8 +72,9 @@ const EighteenSection = ({
   title, 
   subtitle, 
   description, 
-  data, 
+  data = [], 
   error,
+  loading,
   imageOnLeft = true
 }) => {
   const half = Math.ceil(data.length / 2);
@@ -154,12 +155,26 @@ const EighteenSection = ({
           >
             {description}
           </Typography>
-          {error && (
-            <Typography variant="h6" color="error" paragraph>
+          {loading ? (
+            <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
+              <CircularProgress sx={{ color: '#CF0A0A' }} />
+            </Box>
+          ) : error ? (
+            <Typography 
+              variant="h6" 
+              sx={{ 
+                color: '#CF0A0A',
+                textAlign: 'center',
+                padding: 2,
+                backgroundColor: 'rgba(207, 10, 10, 0.1)',
+                borderRadius: 1,
+                marginY: 4
+              }}
+            >
               {error}
             </Typography>
-          )}
-          <Box sx={{ 
+          ) : (
+            <Box sx={{ 
             display: 'flex', 
             flexDirection: {xs: 'column', sm: 'row'},
             justifyContent: 'space-around',
@@ -188,7 +203,8 @@ const EighteenSection = ({
                 </GatsbyListItem>
               ))}
             </List>
-          </Box>
+            </Box>
+          )}
         </Box>
         {!imageOnLeft && (
           <GatsbyImage

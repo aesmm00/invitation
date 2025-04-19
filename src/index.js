@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CustomThemeProvider from './theme';
+import { store } from './redux/store.ts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CustomThemeProvider>
-      <App />
-    </CustomThemeProvider>
+    <Provider store={store}>
+      <CustomThemeProvider>
+        <App />
+      </CustomThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
