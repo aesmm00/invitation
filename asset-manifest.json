@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/invitation/static/css/main.46fe3245.css",
+    "main.js": "/invitation/static/js/main.be4582d2.js",
+    "static/js/453.21be8fb1.chunk.js": "/invitation/static/js/453.21be8fb1.chunk.js",
+    "static/media/aboutPhoto.jpg": "/invitation/static/media/aboutPhoto.ac6ec2fef89c52535305.jpg",
+    "static/media/eventDetailsLandscapeBg.jpg": "/invitation/static/media/eventDetailsLandscapeBg.4cf148738516d3715480.jpg",
+    "static/media/homeLandscapeBg.jpg": "/invitation/static/media/homeLandscapeBg.4cf148738516d3715480.jpg",
+    "static/media/eventDetailsPortraitBg.jpg": "/invitation/static/media/eventDetailsPortraitBg.ecfc1db57f8dd7ab3f3f.jpg",
+    "static/media/homePortraitBg.jpg": "/invitation/static/media/homePortraitBg.ecfc1db57f8dd7ab3f3f.jpg",
+    "static/media/rsvpSectionBG.jpg": "/invitation/static/media/rsvpSectionBG.b7948c95bd1a9fd1cc30.jpg",
+    "static/media/photoSmall3.jpg": "/invitation/static/media/photoSmall3.1a1f78fd67357a7b4a8b.jpg",
+    "static/media/aboutLandscapeBg.jpg": "/invitation/static/media/aboutLandscapeBg.fd98322b6c8d890fbade.jpg",
+    "static/media/aboutPortraitBg.jpg": "/invitation/static/media/aboutPortraitBg.26a30834bfcb70ebc3e9.jpg",
+    "static/media/eighteenBlueBillsBG.jpg": "/invitation/static/media/eighteenBlueBillsBG.fd98322b6c8d890fbade.jpg",
+    "static/media/eighteenSidePhoto.jpg": "/invitation/static/media/eighteenSidePhoto.5dba3000071b6921af6c.jpg",
+    "static/media/photoLarge.jpg": "/invitation/static/media/photoLarge.a2e7b65041f0d711e425.jpg",
+    "static/media/photoSmall2.jpg": "/invitation/static/media/photoSmall2.f78c640d95244a8766d3.jpg",
+    "static/media/eighteenCandlesBG.jpg": "/invitation/static/media/eighteenCandlesBG.3fd58dda2411c8a46365.jpg",
+    "static/media/eighteenTreasureBG.jpg": "/invitation/static/media/eighteenTreasureBG.3fd58dda2411c8a46365.jpg",
+    "static/media/photoSmall1.jpg": "/invitation/static/media/photoSmall1.6f6fee1db227067d426b.jpg",
+    "static/media/eighteenBlueBillsSidePhoto.jpg": "/invitation/static/media/eighteenBlueBillsSidePhoto.49001011eca37d58c95f.jpg",
+    "static/media/eighteenShotsSidePhoto.jpg": "/invitation/static/media/eighteenShotsSidePhoto.3085b8b8b9106d520b30.jpg",
+    "static/media/formalAndSemiFormal.jpg": "/invitation/static/media/formalAndSemiFormal.cee73ded70ed582ec364.jpg",
+    "static/media/eighteenTreasureSidePhoto.jpg": "/invitation/static/media/eighteenTreasureSidePhoto.2829f9c389fe4e186d14.jpg",
+    "static/media/Quincento D.otf": "/invitation/static/media/Quincento D.40517f10e9b5705954e2.otf",
+    "static/media/DechoraZone-Regular.ttf": "/invitation/static/media/DechoraZone-Regular.b06d3f716a6e00ebe679.ttf",
+    "static/media/DecomangHold-Regular.ttf": "/invitation/static/media/DecomangHold-Regular.0db2a6bed048df2d46c7.ttf",
+    "static/media/Decoment-Regular.ttf": "/invitation/static/media/Decoment-Regular.203b509e2dfef50711db.ttf",
+    "static/media/gatsbyOutfit.jpg": "/invitation/static/media/gatsbyOutfit.3168d7afb7d310177500.jpg",
+    "static/media/Decolmax-Regular.ttf": "/invitation/static/media/Decolmax-Regular.b75dc85f382fd2ced2f1.ttf",
+    "static/media/eighteenRosesBG.jpg": "/invitation/static/media/eighteenRosesBG.af63294cbe4906eb7434.jpg",
+    "static/media/eighteenShotsBG.jpg": "/invitation/static/media/eighteenShotsBG.af63294cbe4906eb7434.jpg",
+    "index.html": "/invitation/index.html",
+    "main.46fe3245.css.map": "/invitation/static/css/main.46fe3245.css.map",
+    "main.be4582d2.js.map": "/invitation/static/js/main.be4582d2.js.map",
+    "453.21be8fb1.chunk.js.map": "/invitation/static/js/453.21be8fb1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46fe3245.css",
+    "static/js/main.be4582d2.js"
+  ]
+}
