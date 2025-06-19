@@ -236,6 +236,7 @@ const NavBar = ({ onNavClick }) => {
         { text: '18 Candles', onClick: () => onNavClick('candles') },
         { text: '18 Blue Bills', onClick: () => onNavClick('blueBills') },
         { text: '18 Treasure', onClick: () => onNavClick('treasure') },
+        { text: '18 Shots', onClick: () => onNavClick('shots') },
         { text: 'RSVP', onClick: () => onNavClick('rsvp') },
     ];
 

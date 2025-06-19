@@ -15,6 +15,7 @@ import EventDetails from './Components/EventDetails';
 import Footer from './Components/Footer';
 import { verifyCode } from './redux/user/actions';
 import { selectCodeVerified, selectLoading, selectError } from './redux/user/selectors';
+import EighteenShots from 'Components/EighteenSection/EighteenShots';
 
 const MainContent = () => {
   const homeRef = useRef(null);
@@ -24,6 +25,7 @@ const MainContent = () => {
   const candlesRef = useRef(null);
   const blueBillsRef = useRef(null);
   const treasureRef = useRef(null);
+  const shotsRef = useRef(null);
   const eventDetailsRef = useRef(null);
 
   const scrollToSection = (ref) => {
@@ -42,6 +44,7 @@ const MainContent = () => {
       candles: candlesRef,
       blueBills: blueBillsRef,
       treasure: treasureRef,
+      shots: shotsRef,
       eventDetails: eventDetailsRef
     };
 
@@ -62,6 +65,7 @@ const MainContent = () => {
         <div ref={candlesRef}><EighteenCandles /></div>
         <div ref={blueBillsRef}><EighteenBlueBills /></div>
         <div ref={treasureRef}><EighteenTreasure /></div>
+        <div ref={shotsRef}><EighteenShots /></div>
         <div ref={rsvpRef}><RSVPSection onSubmit={() => scrollToSection(rsvpRef)} /></div>
       </Box>
       <Footer />

@@ -6,18 +6,21 @@ const initialState: EighteenState = {
     Roses: [],
     Candles: [],
     Treasures: [],
+    Shots: [],
     BlueBills: [],
   },
   loading: {
     Roses: false,
     Candles: false,
     Treasures: false,
+    Shots: false,
     BlueBills: false,
   },
   error: {
     Roses: null,
     Candles: null,
     Treasures: null,
+    Shots: null,
     BlueBills: null,
   },
 };

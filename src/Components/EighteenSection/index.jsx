@@ -91,17 +91,16 @@ const EighteenSection = ({
         zIndex: 2,
         padding: { xs: '20px', md: '40px' }
       }}>
-        {imageOnLeft && (
-          <GatsbyImage
-            component="img"
-            image={sideImage}
-            sx={{ 
-              width: {xs: '100%', md: 400, xl:700},
-              position: 'relative'
-            }}
-            alt={title}
-          />
-        )}
+        <GatsbyImage
+          component="img"
+          image={sideImage}
+          sx={{ 
+            width: {xs: '100%', md: 400, xl:700},
+            position: 'relative',
+            order: { xs: 1, md: imageOnLeft ? 1 : 3 }
+          }}
+          alt={title}
+        />
         <Box sx={{ 
           display: 'flex', 
           flexDirection: 'column', 
@@ -114,7 +113,8 @@ const EighteenSection = ({
           margin: { 
             xs: '20px 0', 
             md: imageOnLeft ? '0 0 0 20px' : '0 20px 0 0' 
-          }
+          },
+          order: { xs: 2, md: 2 }
         }} color='#EEEEEE'>
           <Typography 
             variant="h6" 
@@ -206,17 +206,6 @@ const EighteenSection = ({
             </Box>
           )}
         </Box>
-        {!imageOnLeft && (
-          <GatsbyImage
-            component="img"
-            image={sideImage}
-            sx={{ 
-              width: {xs: '100%', md: 400, xl:700},
-              position: 'relative'
-            }}
-            alt={title}
-          />
-        )}
       </Box>
     </GatsbyContainer>
   );

@@ -1,4 +1,4 @@
-export type EighteenCategory = 'Roses' | 'Candles' | 'Treasures' | 'BlueBills';
+export type EighteenCategory = 'Roses' | 'Candles' | 'Treasures' | 'BlueBills'  | 'Shots' ;
 
 export interface EighteenPerson {
   name: string;
