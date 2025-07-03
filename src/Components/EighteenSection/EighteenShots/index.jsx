@@ -27,7 +27,7 @@ const EighteenShots = () => {
             data={data}
             error={error}
             loading={loading}
-            imageOnLeft={false}
+            imageOnLeft={true}
         />
     );
 };

@@ -141,29 +141,16 @@ const EventDetails = () => {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <StyledTypography variant="h5">Where</StyledTypography>
-                  <StyledBodyTypography variant="body1">The Grand Gatsby Ballroom</StyledBodyTypography>
+                  <StyledBodyTypography variant="body1">To be announce</StyledBodyTypography>
+                  {/* <StyledBodyTypography variant="body1">The Grand Gatsby Ballroom</StyledBodyTypography>
                   <StyledBodyTypography variant="body1">123 Roaring Twenties Avenue</StyledBodyTypography>
-                  <StyledBodyTypography variant="body1">Manila, Philippines</StyledBodyTypography>
+                  <StyledBodyTypography variant="body1">Manila, Philippines</StyledBodyTypography> */}
                 </Grid>
               </Grid>
               <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(207, 10, 10, 0.3)' }}>
                     <CountdownTimer targetDate="2025-09-27T20:00:00" />
                   </Box>
             </StyledPaper>
-          </Grid>
-          <Grid item xs={12}>
-            <MapContainer>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.802548850011!2d121.04128661478882!3d14.553732589828378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8efd99aad53%3A0xb64b39847a866fde!2sShangrila%20The%20Fort!5e0!3m2!1sen!2sph!4v1650123456789!5m2!1sen!2sph"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map of Event Location"
-              />
-            </MapContainer>
           </Grid>
           <Grid item xs={12}>
             <StyledPaper elevation={3}>
