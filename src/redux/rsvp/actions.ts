@@ -1,40 +1,34 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { RSVPResponse } from './types';
-import { addResponse, setLoading, setError, clearError } from './slice';
-import { setInitialData } from '../user/slice';
-import { InitialData } from '../user/types';
+import { RootState } from '../store';
 
-export const submitResponse = createAsyncThunk<InitialData, RSVPResponse, { rejectValue: string }>(
-  'rsvp/submitResponse',
-  async (response: RSVPResponse, { dispatch, rejectWithValue }) => {
-    dispatch(setLoading(true));
-    dispatch(clearError());
-    
-    const url = `https://script.google.com/macros/s/AKfycbw1T_Gf1k37jAYAhtC-ozc8QcsKrQ2ug79VvSPDMaScCc7Gm3EUhZw1eQQlOhE4OTHB/exec?code=${response.code}`;
-    try {
-      const apiResponse = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: JSON.stringify({ 
-          email: response.email, 
-          rsvpStatus: response.attending
-        })
-      });
-      
-      if (!apiResponse.ok) {
-        throw new Error('Failed to submit response');
+const API_URL = 'https://script.google.com/macros/s/AKfycbxuNpTjNM19KpUSsjXYYGDzgJ_NJje34EcJ0KNlh1rIWIzz5PZ6goCA_ApFyntDC1xB9g/exec';
+
+export const submitRSVP = createAsyncThunk(
+  'rsvp/submit',
+  async (_, { getState }) => {
+    const state = (getState() as RootState).rsvp;
+    const submissions = [];
+
+    for (const name of state.names) {
+      if (name.trim()) {
+        submissions.push(
+          fetch(`${API_URL}/exec`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+              Name: name,
+              Email: state.email,
+              "RSVP status": state.attending,
+              Allergies: state.allergies,
+              Message: state.message
+            })
+          })
+        );
       }
-
-      const data = await apiResponse.json();
-      dispatch(addResponse(response));
-      dispatch(setInitialData(data));
-      dispatch(setLoading(false));
-      return data;
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-      dispatch(setError(errorMessage));
-      dispatch(setLoading(false));
-      return rejectWithValue(errorMessage);
     }
+
+    await Promise.all(submissions);
   }
 );

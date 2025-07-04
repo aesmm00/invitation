@@ -119,7 +119,7 @@ const EventDetails = () => {
 
   return (
     <StyledBox>
-      <Container maxWidth="md">
+      <Container maxWidth="2xl">
         <StyledTypography variant="h2" align="center" gutterBottom>
           When & Where
         </StyledTypography>

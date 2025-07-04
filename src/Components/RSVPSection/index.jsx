@@ -1,12 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
 import { TextField, Radio, RadioGroup, Button, FormControlLabel, Typography, Box, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import rsvpSectionBG from '../../assets/photos/rsvpSection/rsvpSectionBG.jpg';
-import { submitResponse } from '../../redux/rsvp/actions';
-import { selectLoading as selectRSVPLoading, selectError as selectRSVPError } from '../../redux/rsvp/selectors';
-import { selectInitialData} from '../../redux/user/selectors';
-import { useAppDispatch } from '../../redux/hooks.ts';
+import { updateField, addName, removeName, resetForm } from '../../redux/rsvp/slice';
+import { submitRSVP } from '../../redux/rsvp/actions';
+import { 
+    selectNames, 
+    selectEmail, 
+    selectAttending, 
+    selectAllergies,
+    selectMessage, 
+    selectSubmitting, 
+    selectSubmitted, 
+    selectError 
+} from '../../redux/rsvp/selectors';
 
 const RSVPContainer = styled.div`
   background: url(${rsvpSectionBG});
@@ -201,30 +209,48 @@ const GatsbyFormControlLabel = styled(FormControlLabel)`
   }
 `;
 
-const RSVPSection = ({ onSubmit }) => {
-    const dispatch = useAppDispatch();
-    const loading = useSelector(selectRSVPLoading) ;
-    const error = useSelector(selectRSVPError) ;
-    const initialData = useSelector(selectInitialData);
-
-    const [email, setEmail] = React.useState('');
-    const [attending, setAttending] = React.useState('');
+const RSVPSection = () => {
+    const dispatch = useDispatch();
+    const names = useSelector(selectNames);
+    const email = useSelector(selectEmail);
+    const attending = useSelector(selectAttending);
+    const allergies = useSelector(selectAllergies);
+    const message = useSelector(selectMessage);
+    const submitting = useSelector(selectSubmitting);
+    const submitted = useSelector(selectSubmitted);
+    const error = useSelector(selectError);
     const [errors, setErrors] = React.useState({});
-    const [isEditing, setIsEditing] = React.useState(false);
     const [showAlert, setShowAlert] = React.useState(false);
-    const [alertMessage, setAlertMessage] = React.useState('');
 
     const handleCloseAlert = () => {
         setShowAlert(false);
-        setIsEditing(false);
         const currentHash = window.location.hash;
         window.location.href = window.location.origin + window.location.pathname + currentHash;
     };
 
+    const handleAddName = (e) => {
+        e.preventDefault(); // Prevent form submission
+        dispatch(addName());
+    };
+
+    const handleRemoveName = (index) => {
+        dispatch(removeName(index));
+    };
+
+    const handleNameChange = (index, value) => {
+        dispatch(updateField({ field: 'names', value, index }));
+    };
+
+    const handleFieldChange = (field, value) => {
+        dispatch(updateField({ field, value }));
+    };
+
     const validate = () => {
         let tempErrors = {};
+        tempErrors.names = names.every(name => name.trim() !== '') ? "" : "All name fields are required.";
         tempErrors.email = email ? "" : "This field is required.";
         tempErrors.attending = attending ? "" : "This field is required.";
+        // Notes are optional, no validation needed
         setErrors(tempErrors);
         return Object.values(tempErrors).every(x => x === "");
     };
@@ -233,34 +259,13 @@ const RSVPSection = ({ onSubmit }) => {
         e.preventDefault();
         if (validate()) {
             try {
-                await dispatch(submitResponse({ 
-                    code: initialData.Code,
-                    email, 
-                    attending 
-                })).unwrap();
-                setIsEditing(false);
-                setAlertMessage(attending === 'Accepted' ? 
-                    'Thank you for accepting! A calendar invite has been sent to your email.' :
-                    'Thank you for submitting your response!'
-                );
+                await dispatch(submitRSVP()).unwrap();
                 setShowAlert(true);
-
             } catch (error) {
                 console.error('Failed to submit response:', error);
             }
         }
     };
-
-    React.useEffect(() => {
-        if (initialData) {
-            if (initialData.Email) {
-                setEmail(initialData.Email);
-            }
-            if (initialData["RSVP Status"]) {
-                setAttending(initialData["RSVP Status"]);
-            }
-        }
-    }, [initialData]);
 
     return (
         <RSVPContainer>
@@ -282,7 +287,7 @@ const RSVPSection = ({ onSubmit }) => {
                         letterSpacing: '2px',
                         textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
                     }}>
-                    Dearest <strong>{initialData?.Name}</strong>
+                    Dearest Guest
                 </Typography>
                 <Typography variant="body1" 
                     style={{ 
@@ -294,6 +299,21 @@ const RSVPSection = ({ onSubmit }) => {
                     }}>
                     You are cordially invited to an enchanting night of opulence and wonder.
                     Step into a world where jazz meets elegance, and every moment becomes a memory.
+                </Typography>
+                <Typography variant="body1" 
+                    style={{ 
+                        color: '#FFFFFF', 
+                        marginBottom: '20px', 
+                        textAlign: 'center',
+                        fontStyle: 'italic',
+                        fontSize: '1rem',
+                        letterSpacing: '1px',
+                        padding: '15px',
+                        border: '1px solid rgba(178, 34, 34, 0.3)',
+                        borderRadius: '5px',
+                        backgroundColor: 'rgba(178, 34, 34, 0.1)'
+                    }}>
+                    NOTE: PLEASE REFER TO YOUR INVITATION OR FACEBOOK MESSAGE FOR THE NUMBER OF SEATS RESERVED FOR YOU. SEATS ARE LIMITED.
                 </Typography>
                 <Typography variant="body1" 
                     style={{ 
@@ -310,51 +330,46 @@ const RSVPSection = ({ onSubmit }) => {
                     }}>
                     Please Confirm your RSVP on or before August 23, 2025
                 </Typography>
-                {initialData?.["RSVP Status"] && !isEditing ? (
-                    <>
-                        <Typography variant="h6" 
-                            style={{ 
-                                color: '#FFFFFF', 
-                                marginBottom: '20px', 
-                                textAlign: 'center',
-                                marginLeft: 'auto',
-                                marginRight: 'auto',
-                                maxWidth: '90%',
-                                padding: '20px',
-                                border: '1px solid rgba(178, 34, 34, 0.3)',
-                                borderRadius: '5px',
-                                backgroundColor: 'rgba(178, 34, 34, 0.1)'
-                            }}>
-                            Thank you for your Response! You have {initialData["RSVP Status"]} the Invitation.
-                            {initialData["RSVP Status"] === "Accepted" ? (
-                                <Typography variant="body1" style={{ marginTop: '10px', color: '#B22222' }}>
-                                    We look forward to Celebrating with you on this Special Night!
-                                </Typography>
-                            ) : (
-                                <Typography variant="body1" style={{ marginTop: '10px', color: '#B22222' }}>
-                                    We will miss your Presence, but thank you for letting us know.
-                                </Typography>
+                <form onSubmit={handleSubmit}>
+                    {names.map((name, index) => (
+                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                            <GatsbyTextField
+                                label={`Guest ${index + 1} Name`}
+                                type="text"
+                        value={name}
+                        onChange={(e) => handleNameChange(index, e.target.value)}
+                        disabled={submitting}
+                                fullWidth
+                                margin="normal"
+                                error={!!errors.names}
+                                helperText={index === 0 ? errors.names : ''}
+                            />
+                            {index > 0 && (
+                                <GatsbyButton
+                                    onClick={() => handleRemoveName(index)}
+                                    variant="outlined"
+                                    sx={{ minWidth: 'auto', mt: 2 }}
+                                >
+                                    ✕
+                                </GatsbyButton>
                             )}
-                        </Typography>
-                        {/* <GatsbyButton 
-                            onClick={() => setIsEditing(true)} 
-                            variant="outlined" 
-                            fullWidth 
-                            style={{ 
-                                marginTop: '20px',
-                                borderColor: '#B22222',
-                                color: '#FFFFFF'
-                            }}>
-                            Wish to Edit Your Response?
-                        </GatsbyButton> */}
-                    </>
-                ) : (
-                    <form onSubmit={handleSubmit}>
+                        </Box>
+                    ))}
+                    <GatsbyButton
+                        onClick={handleAddName}
+                        variant="outlined"
+                        fullWidth
+                        sx={{ mb: 2 }}
+                        type="button" // Explicitly set type to button
+                    >
+                        Add Another Guest
+                    </GatsbyButton>
                     <GatsbyTextField
                         label="Email"
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => handleFieldChange('email', e.target.value)}
+                        disabled={submitting}
                         fullWidth
                         margin="normal"
                         error={!!errors.email}
@@ -365,7 +380,8 @@ const RSVPSection = ({ onSubmit }) => {
                     </Typography>
                     <RadioGroup
                         value={attending}
-                        onChange={(e) => setAttending(e.target.value)}
+                        onChange={(e) => handleFieldChange('attending', e.target.value)}
+                        disabled={submitting}
                     >
                         <GatsbyFormControlLabel 
                             value="Accepted" 
@@ -381,29 +397,36 @@ const RSVPSection = ({ onSubmit }) => {
                         />
                     </RadioGroup>
                     {errors.attending && <Typography color="error">{errors.attending}</Typography>}
+                    <GatsbyTextField
+                        label="Allergies"
+                        value={allergies}
+                        onChange={(e) => handleFieldChange('allergies', e.target.value)}
+                        disabled={submitting}
+                        fullWidth
+                        margin="normal"
+                        placeholder="Please list any food allergies or dietary restrictions"
+                    />
+                    <GatsbyTextField
+                        label="Message"
+                        multiline
+                        rows={4}
+                        value={message}
+                        onChange={(e) => handleFieldChange('message', e.target.value)}
+                        disabled={submitting}
+                        fullWidth
+                        margin="normal"
+                        placeholder="Any special message or requests?"
+                    />
                     <Box sx={{ 
                         display: 'flex', 
                         gap: 2,
                         marginTop: 2
                     }}>
-                        {initialData?.["RSVP Status"] && (
-                            <GatsbyButton 
-                                onClick={() => setIsEditing(false)} 
-                                variant="outlined" 
-                                fullWidth
-                                style={{ 
-                                    borderColor: '#B22222',
-                                    color: '#FFFFFF'
-                                }}>
-                                Cancel
-                            </GatsbyButton>
-                        )}
-                        <GatsbyButton type="submit" variant="contained" fullWidth disabled={loading}>
-                            {loading ? 'Submitting...' : 'Confirm My Attendance'}
+                        <GatsbyButton type="submit" variant="contained" fullWidth disabled={submitting}>
+                            {submitting ? 'Submitting...' : 'Confirm My Attendance'}
                         </GatsbyButton>
                     </Box>
-                    </form>
-                )}
+                </form>
                 {error && <Typography color="error" style={{ marginTop: '10px' }}>{error}</Typography>}
             </GatsbyCard>
             <Dialog
@@ -428,12 +451,17 @@ const RSVPSection = ({ onSubmit }) => {
                 </DialogTitle>
                 <DialogContent>
                     <Typography sx={{ textAlign: 'center', my: 2 }}>
-                        {alertMessage}
+                        {attending === 'Yes' 
+                            ? 'Thank you for accepting! A calendar invite has been sent to your email.'
+                            : 'Thank you for submitting your response!'}
                     </Typography>
                 </DialogContent>
                 <DialogActions sx={{ justifyContent: 'center', pb: 2 }}>
                     <GatsbyButton 
-                        onClick={handleCloseAlert}
+                        onClick={() => {
+                            handleCloseAlert();
+                            dispatch(resetForm());
+                        }}
                         variant="contained"
                         style={{ minWidth: '120px' }}
                     >
