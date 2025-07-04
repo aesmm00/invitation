@@ -37,40 +37,37 @@ const TimerLabel = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-const CountdownTimer = ({ targetDate }) => {
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    // Convert to Philippine Time (UTC+8)
-    const phTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
-    const target = new Date(targetDate);
-    const difference = +target - +phTime;
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+const CountdownTimer = ({ targetDate = '2025-08-09T15:00:00' }) => {
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    const targetDateObj = new Date(targetDate);
 
-    return () => clearInterval(timer);
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDateObj - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        setCountdown({ days, hours, minutes, seconds });
+      } else {
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
   }, [targetDate]);
 
-  const timerComponents = Object.keys(timeLeft).map((interval) => (
+  const timerComponents = Object.keys(countdown).map((interval) => (
     <TimerItem key={interval}>
-      <TimerValue>{timeLeft[interval]}</TimerValue>
+      <TimerValue>{countdown[interval]}</TimerValue>
       <TimerLabel>{interval}</TimerLabel>
     </TimerItem>
   ));

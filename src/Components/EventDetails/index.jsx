@@ -5,6 +5,7 @@ import CountdownTimer from '../CountdownTimer';
 import { keyframes } from '@emotion/react';
 import eventDetailsLandscapeBg from '../../assets/photos/eventDetails/eventDetailsLandscapeBg.jpg';
 import eventDetailsPortraitBg from '../../assets/photos/eventDetails/eventDetailsPortraitBg.jpg';
+import SaveTheDateVideo from './SaveTheDateVideo';
 
 const shimmer = keyframes`
   0% { opacity: 0.4; }
@@ -85,28 +86,7 @@ const StyledBodyTypography = styled(Typography)(({ theme }) => ({
   }
 }));
 
-const MapContainer = styled(Box)(({ theme }) => ({
-  width: '100%',
-  height: '300px',
-  border: '1px solid #CF0A0A',
-  position: 'relative',
-  overflow: 'hidden',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    border: '2px solid transparent',
-    background: 'linear-gradient(45deg, #CF0A0A, transparent) border-box',
-    WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-    WebkitMaskComposite: 'destination-out',
-    maskComposite: 'exclude',
-  }
-}));
-
-const EventDetails = () => {
+const EventDetails = ({ showSaveTheDateVideo = false }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageClick = (image) => {
@@ -148,7 +128,7 @@ const EventDetails = () => {
                 </Grid>
               </Grid>
               <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(207, 10, 10, 0.3)' }}>
-                    <CountdownTimer targetDate="2025-09-27T20:00:00" />
+                    <CountdownTimer targetDate="2025-09-27T18:00:00" />
                   </Box>
             </StyledPaper>
           </Grid>
@@ -417,6 +397,11 @@ const EventDetails = () => {
             </StyledPaper>
           </Grid>
         </Grid>
+        {showSaveTheDateVideo && (
+          <Grid item xs={12} sx={{ mt: 4 }}>
+            <SaveTheDateVideo videoId="Yxy-egJh494?si=YornXNWfxqL0b-Qy" />
+          </Grid>
+        )}
       </Container>
       <Modal
         open={Boolean(selectedImage)}

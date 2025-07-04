@@ -57,7 +57,7 @@ const MainContent = () => {
         <Divider style={{ backgroundColor: 'red' }} />
         <div ref={homeRef}><Home /></div>
         <div ref={aboutRef}><About /></div>
-        <div ref={eventDetailsRef}><EventDetails /></div>
+        <div ref={eventDetailsRef}><EventDetails showSaveTheDateVideo={false} /></div>
         <div ref={rosesRef}><EighteenRoses /></div>
         <div ref={candlesRef}><EighteenCandles /></div>
         <div ref={blueBillsRef}><EighteenBlueBills /></div>
