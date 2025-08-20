@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/invitation/static/css/main.46fe3245.css",
-    "main.js": "/invitation/static/js/main.0f1db7dc.js",
+    "main.js": "/invitation/static/js/main.c4f16f69.js",
     "static/js/453.21be8fb1.chunk.js": "/invitation/static/js/453.21be8fb1.chunk.js",
     "static/media/aboutPhoto.jpg": "/invitation/static/media/aboutPhoto.ac6ec2fef89c52535305.jpg",
+    "static/media/Lana Del Rey - Young and Beautiful (from The Great Gatsby Soundtrack).mp3": "/invitation/static/media/Lana Del Rey - Young and Beautiful (from The Great Gatsby Soundtrack).a24f986e573618712a3e.mp3",
     "static/media/eventDetailsLandscapeBg.jpg": "/invitation/static/media/eventDetailsLandscapeBg.4cf148738516d3715480.jpg",
     "static/media/homeLandscapeBg.jpg": "/invitation/static/media/homeLandscapeBg.4cf148738516d3715480.jpg",
     "static/media/eventDetailsPortraitBg.jpg": "/invitation/static/media/eventDetailsPortraitBg.ecfc1db57f8dd7ab3f3f.jpg",
@@ -33,11 +34,11 @@
     "static/media/eighteenShotsBG.jpg": "/invitation/static/media/eighteenShotsBG.af63294cbe4906eb7434.jpg",
     "index.html": "/invitation/index.html",
     "main.46fe3245.css.map": "/invitation/static/css/main.46fe3245.css.map",
-    "main.0f1db7dc.js.map": "/invitation/static/js/main.0f1db7dc.js.map",
+    "main.c4f16f69.js.map": "/invitation/static/js/main.c4f16f69.js.map",
     "453.21be8fb1.chunk.js.map": "/invitation/static/js/453.21be8fb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46fe3245.css",
-    "static/js/main.0f1db7dc.js"
+    "static/js/main.c4f16f69.js"
   ]
 }
