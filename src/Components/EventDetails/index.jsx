@@ -118,13 +118,14 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
                   <StyledBodyTypography variant="body2" sx={{ fontStyle: 'italic', mt: 2 }}>
                     Join us for an unforgettable evening of celebration and glamour
                   </StyledBodyTypography>
+                  <StyledBodyTypography variant="body2" sx={{ fontStyle: 'italic', color: '#FF4500', mt: 1 }}>
+                    Early Arrival: Please be seated by 5:30 PM
+                  </StyledBodyTypography>
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <StyledTypography variant="h5">Where</StyledTypography>
-                  <StyledBodyTypography variant="body1">To be announce</StyledBodyTypography>
-                  {/* <StyledBodyTypography variant="body1">The Grand Gatsby Ballroom</StyledBodyTypography>
-                  <StyledBodyTypography variant="body1">123 Roaring Twenties Avenue</StyledBodyTypography>
-                  <StyledBodyTypography variant="body1">Manila, Philippines</StyledBodyTypography> */}
+                  <StyledBodyTypography variant="body1">4th Floor, 2501 Rodriguez St., Balut, Tondo, Manila</StyledBodyTypography>
+                  <StyledBodyTypography variant="body1">(Landmark: Above Frapatee and Goldilocks)</StyledBodyTypography>
                 </Grid>
               </Grid>
               <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(207, 10, 10, 0.3)' }}>

@@ -13,6 +13,7 @@ import EighteenTreasure from './Components/EighteenSection/EighteenTreasure';
 import EventDetails from './Components/EventDetails';
 import Footer from './Components/Footer';
 import EighteenShots from './Components/EighteenSection/EighteenShots';
+import AudioPlayer from './Components/AudioPlayer';
 
 const MainContent = () => {
   const homeRef = useRef(null);
@@ -66,6 +67,7 @@ const MainContent = () => {
         <div ref={rsvpRef}><RSVPSection onSubmit={() => scrollToSection(rsvpRef)} /></div>
       </Box>
       <Footer />
+      <AudioPlayer />
     </>
   );
 };
