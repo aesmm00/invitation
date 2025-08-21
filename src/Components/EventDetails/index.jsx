@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Typography, Container, Grid, Paper, Modal } from '@mui/material';
+import React from 'react';
+import { Box, Typography, Container, Grid, Paper, Stack } from '@mui/material';
 import { styled } from '@mui/system';
 import CountdownTimer from '../CountdownTimer';
 import { keyframes } from '@emotion/react';
@@ -76,369 +76,124 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const StyledBodyTypography = styled(Typography)(({ theme }) => ({
-  fontFamily: '"Decoment", sans-serif',
   color: '#FFFFFF',
   textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
   marginBottom: theme.spacing(1),
   transition: 'color 0.3s ease',
   '&:hover': {
     color: '#FF1E1E',
-  }
+  },
+  letterSpacing: 2,
 }));
 
+const DecorativeCircle = styled('div')(({ size = 50, color}) => ({
+  width: `${size}px`,
+  height: `${size}px`,
+  backgroundColor: color,
+  borderRadius: '50%',
+  lineHeight: '1',
+  marginLeft: '-25px', // Half of the circle size for overlap
+  '&:first-of-type': {
+    marginLeft: 0,
+  },
+  boxShadow: '0 0 0 1px #670d2f', // White border for better separation
+}));
+
+const GatsbyTitle = styled(Typography)`
+  position: relative;
+  padding: 20px 0;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #CF0A0A, transparent);
+  }
+`;
+
 const EventDetails = ({ showSaveTheDateVideo = false }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleImageClick = (image) => {
-    setSelectedImage(image);
-  };
-
-  const handleClose = () => {
-    setSelectedImage(null);
-  };
 
   return (
     <StyledBox>
       <Container maxWidth="2xl">
-        <StyledTypography variant="h2" align="center" gutterBottom>
-          When & Where
-        </StyledTypography>
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-            <StyledPaper elevation={3}>
-              <Grid container spacing={4}>
-                <Grid item xs={12} md={4}>
-                  <StyledTypography variant="h5">Date</StyledTypography>
-                  <StyledBodyTypography variant="body1">Saturday, September 27, 2025</StyledBodyTypography>
 
+        <GatsbyTitle 
+            variant="h2" 
+            component="h1" 
+            fontFamily="DechoraZone" 
+            letterSpacing={2} 
+            color='#CF0A0A'
+            sx={{ 
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
+              textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8)',
+              marginBottom: 2,
+              textAlign: 'center'
+            }}
+          >
+            Party Details
+        </GatsbyTitle>
+
+        <Grid container spacing={2} marginTop={5}>
+          <Grid size={{ xs: 12 }}>
+            <StyledPaper elevation={3}>
+              <Grid container direction={'row'} alignItems={'center'} justifyContent={'center'} mt={4} spacing={2}>
+                <Grid size={{ sm: 12, md: 6 }} spacing={2}>
+                  <Box spacing={2}>
+                    <StyledTypography variant="h3">Date & Venue</StyledTypography>
+                    <StyledBodyTypography variant="h5">Saturday, September 27, 2025</StyledBodyTypography>
+                    <StyledBodyTypography variant="h5">6:00 PM - 10:00 PM</StyledBodyTypography>
+                    <StyledBodyTypography variant="h5" sx={{ fontWeight: 'bold' }} marginTop={4}>
+                      The Grand Events Place 
+                    </StyledBodyTypography>
+                    <StyledBodyTypography variant="h5">4th Floor, 2501 Rodriguez St., Balut, Tondo, Manila</StyledBodyTypography>
+                    <StyledBodyTypography variant="h5">(Landmark: Above Frapatea Cafe and Goldilocks)</StyledBodyTypography>
+                  </Box>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                  <StyledTypography variant="h5">Time</StyledTypography>
-                  <StyledBodyTypography variant="body1">6:00 PM - 10:00 PM</StyledBodyTypography>
-                  <StyledBodyTypography variant="body2" sx={{ fontStyle: 'italic', mt: 2 }}>
-                    Join us for an unforgettable evening of celebration and glamour
+                <Grid size={{ xs: 12, md: 4 }}>
+                  <StyledTypography variant="h3">Dress Code</StyledTypography>
+                  <StyledBodyTypography variant="h5">
+                    Feel free to come in casual to semi-formal wear – I'd love to see you in colors from this sweet palette!
                   </StyledBodyTypography>
-                  <StyledBodyTypography variant="body2" sx={{ fontStyle: 'italic', color: '#FF4500', mt: 1 }}>
-                    Early Arrival: Please be seated by 5:30 PM
+                  <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
+                      <Stack direction={'row'}>
+                        <DecorativeCircle color="#992525" />
+                        <DecorativeCircle color="#7a1e1e" />
+                        <DecorativeCircle color="#5c1818" />
+                        <DecorativeCircle color="#3a1010" />
+                        <DecorativeCircle color="#1a0b0b" />
+                        <DecorativeCircle color="#000000ff" />
+                      </Stack> 
+                  </Box>   
+                  <StyledBodyTypography variant="body1" sx={{ mt: 2, fontStyle: 'italic' }}>
+                    To keep it extra special, let's leave Silver/White for our birthday girl, Adelpha!
                   </StyledBodyTypography>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                  <StyledTypography variant="h5">Where</StyledTypography>
-                  <StyledBodyTypography variant="body1">4th Floor, 2501 Rodriguez St., Balut, Tondo, Manila</StyledBodyTypography>
-                  <StyledBodyTypography variant="body1">(Landmark: Above Frapatee and Goldilocks)</StyledBodyTypography>
+                <Grid size={{ xs: 12, md: 4 }}>
+                  <StyledTypography variant="h3">Celebration Message</StyledTypography>
+                  <StyledBodyTypography variant="h5" sx={{ fontStyle: 'italic' }}>
+                    We're so excited to celebrate this special day with you!
+                  </StyledBodyTypography>
+                  <StyledBodyTypography variant="h5" sx={{ mt: 2 }}>
+                    Get ready for a magical afternoon filled with laughter, love, and sweet memories!
+                  </StyledBodyTypography>
                 </Grid>
               </Grid>
               <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(207, 10, 10, 0.3)' }}>
-                    <CountdownTimer targetDate="2025-09-27T18:00:00" />
-                  </Box>
-            </StyledPaper>
-          </Grid>
-          <Grid item xs={12}>
-            <StyledPaper elevation={3}>
-              <StyledTypography variant="h5">Dress Code: Black & Red Attire</StyledTypography>
-              <StyledBodyTypography variant="body1" sx={{ mb: 3 }}>
-                Any outfit is allowed, but it must prominently feature black and red colors. We encourage creativity while adhering to this color scheme. For those who wish to embrace our theme, we welcome 1920s Gatsby-inspired elements:
-              </StyledBodyTypography>
-              <Grid container spacing={4}>
-                <Grid item xs={12} md={6}>
-                  <Box sx={{
-                    border: '1px solid #CF0A0A',
-                    p: 2,
-                    borderRadius: 1,
-                    position: 'relative',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'linear-gradient(45deg, rgba(207, 10, 10, 0.1), transparent)',
-                      pointerEvents: 'none',
-                    }
-                  }}>
-                    <StyledBodyTypography variant="body1" sx={{ mb: 2, textAlign: 'center' }}>
-                      Ladies
-                    </StyledBodyTypography>
-                    <Grid container spacing={2} sx={{ mb: 2 }}>
-                      <Grid item xs={6}>
-                        <Box sx={{
-                          width: '100%',
-                          height: '250px',
-                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          border: '1px solid #CF0A0A',
-                          borderRadius: 1,
-                          overflow: 'hidden',
-                          position: 'relative'
-                        }}>
-                          <img 
-                            src={require('../../assets/photos/dressCode/ladies/formalAndSemiFormal.jpg')}
-                            alt="Ladies Formal Attire"
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              cursor: 'pointer'
-                            }}
-                            onClick={() => handleImageClick({
-                              src: require('../../assets/photos/dressCode/ladies/formalAndSemiFormal.jpg'),
-                              alt: "Ladies Formal Attire"
-                            })}
-                          />
-                          <Typography 
-                            sx={{ 
-                              position: 'absolute',
-                              bottom: 0,
-                              width: '100%',
-                              backgroundColor: 'rgba(0,0,0,0.85)',
-                              color: '#FFFFFF',
-                              padding: '4px',
-                              textAlign: 'center',
-                              fontSize: '0.8rem',
-                              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
-                            }}
-                          >
-                            Formal/Semi-Formal
-                          </Typography>
-                        </Box>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Box sx={{
-                          width: '100%',
-                          height: '250px',
-                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          border: '1px solid #CF0A0A',
-                          borderRadius: 1,
-                          overflow: 'hidden',
-                          position: 'relative'
-                        }}>
-                          <img 
-                            src={require('../../assets/photos/dressCode/ladies/gatsbyOutfit.jpg')}
-                            alt="Ladies Gatsby Attire"
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              cursor: 'pointer'
-                            }}
-                            onClick={() => handleImageClick({
-                              src: require('../../assets/photos/dressCode/ladies/gatsbyOutfit.jpg'),
-                              alt: "Ladies Gatsby Attire"
-                            })}
-                          />
-                          <Typography 
-                            sx={{ 
-                              position: 'absolute',
-                              bottom: 0,
-                              width: '100%',
-                              backgroundColor: 'rgba(0,0,0,0.7)',
-                              color: '#fff',
-                              padding: '4px',
-                              textAlign: 'center',
-                              fontSize: '0.8rem'
-                            }}
-                          >
-                            Gatsby-Inspired
-                          </Typography>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left' }}>
-                      • Black dresses with red accessories or vice versa<br/>
-                      • Red and black patterned or color-blocked outfits<br/>
-                      • Black attire with red statement pieces<br/>
-                      • Any style of dress or outfit in black and red<br/>
-                      • Accessories in black and red tones
-                    </StyledBodyTypography>
-                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left', mt: 2, fontStyle: 'italic' }}>
-                      Optional Gatsby-inspired elements:<br/>
-                      • Flapper-style dresses in black or red<br/>
-                      • Art Deco-inspired jewelry<br/>
-                      • Feather boas, headbands, or long pearl necklaces
-                    </StyledBodyTypography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <Box sx={{
-                    border: '1px solid #CF0A0A',
-                    p: 2,
-                    borderRadius: 1,
-                    position: 'relative',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'linear-gradient(45deg, rgba(207, 10, 10, 0.1), transparent)',
-                      pointerEvents: 'none',
-                    }
-                  }}>
-                    <StyledBodyTypography variant="body1" sx={{ mb: 2, textAlign: 'center' }}>
-                      Gentlemen
-                    </StyledBodyTypography>
-                    <Grid container spacing={2} sx={{ mb: 2 }}>
-                      <Grid item xs={6}>
-                        <Box sx={{
-                          width: '100%',
-                          height: '250px',
-                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          border: '1px solid #CF0A0A',
-                          borderRadius: 1,
-                          overflow: 'hidden',
-                          position: 'relative'
-                        }}>
-                          <img 
-                            src={require('../../assets/photos/dressCode/gentleman/formalAndSemiFormal.jpg')}
-                            alt="Men's Formal Attire"
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              cursor: 'pointer'
-                            }}
-                            onClick={() => handleImageClick({
-                              src: require('../../assets/photos/dressCode/gentleman/formalAndSemiFormal.jpg'),
-                              alt: "Men's Formal Attire"
-                            })}
-                          />
-                          <Typography 
-                            sx={{ 
-                              position: 'absolute',
-                              bottom: 0,
-                              width: '100%',
-                              backgroundColor: 'rgba(0,0,0,0.7)',
-                              color: '#fff',
-                              padding: '4px',
-                              textAlign: 'center',
-                              fontSize: '0.8rem'
-                            }}
-                          >
-                            Formal/Semi-Formal
-                          </Typography>
-                        </Box>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Box sx={{
-                          width: '100%',
-                          height: '250px',
-                          backgroundColor: 'rgba(207, 10, 10, 0.1)',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          border: '1px solid #CF0A0A',
-                          borderRadius: 1,
-                          overflow: 'hidden',
-                          position: 'relative'
-                        }}>
-                          <img 
-                            src={require('../../assets/photos/dressCode/gentleman/gatsbyOutfit.jpg')}
-                            alt="Men's Gatsby Attire"
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              cursor: 'pointer'
-                            }}
-                            onClick={() => handleImageClick({
-                              src: require('../../assets/photos/dressCode/gentleman/gatsbyOutfit.jpg'),
-                              alt: "Men's Gatsby Attire"
-                            })}
-                          />
-                          <Typography 
-                            sx={{ 
-                              position: 'absolute',
-                              bottom: 0,
-                              width: '100%',
-                              backgroundColor: 'rgba(0,0,0,0.7)',
-                              color: '#fff',
-                              padding: '4px',
-                              textAlign: 'center',
-                              fontSize: '0.8rem'
-                            }}
-                          >
-                            Gatsby-Inspired
-                          </Typography>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left' }}>
-                      • Black suits or blazers with red shirts or accessories<br/>
-                      • Red and black patterned or color-blocked outfits<br/>
-                      • Black attire with red statement pieces<br/>
-                      • Any style of outfit combining black and red<br/>
-                      • Accessories in black and red tones
-                    </StyledBodyTypography>
-                    <StyledBodyTypography variant="body2" sx={{ textAlign: 'left', mt: 2, fontStyle: 'italic' }}>
-                      Optional Gatsby-inspired elements:<br/>
-                      • Pinstripe suits in black with red accents<br/>
-                      • Art Deco-inspired cufflinks or tie clips<br/>
-                      • Fedoras or newsboy caps in black or red
-                    </StyledBodyTypography>
-                  </Box>
-                </Grid>
-              </Grid>
-              <StyledBodyTypography variant="body2" sx={{ mt: 3, fontStyle: 'italic', textAlign: 'center' }}>
-                Remember, your outfit must prominently feature black and red colors. Feel free to be creative while adhering to this color scheme. Gatsby-inspired elements are welcome to enhance the 1920s theme of our celebration!
-              </StyledBodyTypography>
+                <CountdownTimer targetDate="2025-09-27T18:00:00" />
+              </Box>
             </StyledPaper>
           </Grid>
         </Grid>
         {showSaveTheDateVideo && (
-          <Grid item xs={12} sx={{ mt: 4 }}>
+          <Grid xs={12} sx={{ mt: 4 }}>
             <SaveTheDateVideo videoId="Yxy-egJh494?si=YornXNWfxqL0b-Qy" />
           </Grid>
         )}
       </Container>
-      <Modal
-        open={Boolean(selectedImage)}
-        onClose={handleClose}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          '& .MuiBackdrop-root': {
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-          }
-        }}
-      >
-        <Box
-          sx={{
-            position: 'relative',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            outline: 'none',
-          }}
-        >
-          {selectedImage && (
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                cursor: 'pointer',
-              }}
-              onClick={handleClose}
-            />
-          )}
-        </Box>
-      </Modal>
     </StyledBox>
   );
 };

@@ -11,8 +11,6 @@ const AudioPlayer = () => {
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
-      audio.volume = volume / 100;
-      
       const playPromise = audio.play();
       
       if (playPromise !== undefined) {

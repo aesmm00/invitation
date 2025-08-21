@@ -92,7 +92,7 @@ const Home = () => {
     <ArtDecoContainer maxWidth={false}>
       <ContentWrapper>
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography 
               variant="h6" 
               letterSpacing={4}
@@ -130,7 +130,7 @@ const Home = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <PhotoCollage>
               <PhotoLarge 
                 src={photoLarge} 

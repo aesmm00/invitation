@@ -12,7 +12,6 @@ import {
     selectAllergies,
     selectMessage, 
     selectSubmitting, 
-    selectSubmitted, 
     selectError 
 } from '../../redux/rsvp/selectors';
 
@@ -217,7 +216,6 @@ const RSVPSection = () => {
     const allergies = useSelector(selectAllergies);
     const message = useSelector(selectMessage);
     const submitting = useSelector(selectSubmitting);
-    const submitted = useSelector(selectSubmitted);
     const error = useSelector(selectError);
     const [errors, setErrors] = React.useState({});
     const [showAlert, setShowAlert] = React.useState(false);
