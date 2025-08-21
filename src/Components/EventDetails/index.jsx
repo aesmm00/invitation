@@ -147,6 +147,7 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
                     <StyledTypography fontSize={{ xs: '2.5rem', sm: '3.5rem' }}>Date & Venue</StyledTypography>
                     <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>Saturday, September 27, 2025</StyledBodyTypography>
                     <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>6:00 PM - 10:00 PM</StyledBodyTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}} fontStyle="italic" >Be There at 5:30 PM</StyledBodyTypography>
                     <StyledBodyTypography variant={{md:"h6", lg:"h5"}} sx={{ fontWeight: 'bold' }} marginTop={4}>
                       The Grand Events Place 
                     </StyledBodyTypography>
