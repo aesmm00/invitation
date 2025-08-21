@@ -156,7 +156,7 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
                 <Grid size={{ xs: 12, md: 4 }}>
                   <StyledTypography variant="h3">Dress Code</StyledTypography>
                   <StyledBodyTypography variant="h5">
-                    Feel free to come in casual to semi-formal wear – I'd love to see you in colors from this sweet palette!
+                    Feel free to come in semi-formal to formal wear – I'd love to see you in colors from this sweet palette!
                   </StyledBodyTypography>
                   <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
                       <Stack direction={'row'}>
