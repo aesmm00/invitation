@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/invitation/static/css/main.46fe3245.css",
-    "main.js": "/invitation/static/js/main.c4f16f69.js",
-    "static/js/453.21be8fb1.chunk.js": "/invitation/static/js/453.21be8fb1.chunk.js",
+    "main.js": "/invitation/static/js/main.88dadc6b.js",
+    "static/js/453.acccadb7.chunk.js": "/invitation/static/js/453.acccadb7.chunk.js",
     "static/media/aboutPhoto.jpg": "/invitation/static/media/aboutPhoto.ac6ec2fef89c52535305.jpg",
     "static/media/Lana Del Rey - Young and Beautiful (from The Great Gatsby Soundtrack).mp3": "/invitation/static/media/Lana Del Rey - Young and Beautiful (from The Great Gatsby Soundtrack).a24f986e573618712a3e.mp3",
     "static/media/eventDetailsLandscapeBg.jpg": "/invitation/static/media/eventDetailsLandscapeBg.4cf148738516d3715480.jpg",
@@ -22,23 +22,21 @@
     "static/media/photoSmall1.jpg": "/invitation/static/media/photoSmall1.6f6fee1db227067d426b.jpg",
     "static/media/eighteenBlueBillsSidePhoto.jpg": "/invitation/static/media/eighteenBlueBillsSidePhoto.49001011eca37d58c95f.jpg",
     "static/media/eighteenShotsSidePhoto.jpg": "/invitation/static/media/eighteenShotsSidePhoto.3085b8b8b9106d520b30.jpg",
-    "static/media/formalAndSemiFormal.jpg": "/invitation/static/media/formalAndSemiFormal.cee73ded70ed582ec364.jpg",
     "static/media/eighteenTreasureSidePhoto.jpg": "/invitation/static/media/eighteenTreasureSidePhoto.2829f9c389fe4e186d14.jpg",
     "static/media/Quincento D.otf": "/invitation/static/media/Quincento D.40517f10e9b5705954e2.otf",
     "static/media/DechoraZone-Regular.ttf": "/invitation/static/media/DechoraZone-Regular.b06d3f716a6e00ebe679.ttf",
     "static/media/DecomangHold-Regular.ttf": "/invitation/static/media/DecomangHold-Regular.0db2a6bed048df2d46c7.ttf",
     "static/media/Decoment-Regular.ttf": "/invitation/static/media/Decoment-Regular.203b509e2dfef50711db.ttf",
-    "static/media/gatsbyOutfit.jpg": "/invitation/static/media/gatsbyOutfit.3168d7afb7d310177500.jpg",
     "static/media/Decolmax-Regular.ttf": "/invitation/static/media/Decolmax-Regular.b75dc85f382fd2ced2f1.ttf",
     "static/media/eighteenRosesBG.jpg": "/invitation/static/media/eighteenRosesBG.af63294cbe4906eb7434.jpg",
     "static/media/eighteenShotsBG.jpg": "/invitation/static/media/eighteenShotsBG.af63294cbe4906eb7434.jpg",
     "index.html": "/invitation/index.html",
     "main.46fe3245.css.map": "/invitation/static/css/main.46fe3245.css.map",
-    "main.c4f16f69.js.map": "/invitation/static/js/main.c4f16f69.js.map",
-    "453.21be8fb1.chunk.js.map": "/invitation/static/js/453.21be8fb1.chunk.js.map"
+    "main.88dadc6b.js.map": "/invitation/static/js/main.88dadc6b.js.map",
+    "453.acccadb7.chunk.js.map": "/invitation/static/js/453.acccadb7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46fe3245.css",
-    "static/js/main.c4f16f69.js"
+    "static/js/main.88dadc6b.js"
   ]
 }
