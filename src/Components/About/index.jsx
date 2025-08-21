@@ -276,7 +276,6 @@ const About = () => {
                     <GatsbyCard sx={{ 
                         flex: 1, 
                         width: { xs: '100%', md: '60%' },
-                        maxHeight: { md: '600px', lg: '700px' },
                         overflowY: { md: 'auto' }
                     }}>
                         <CardContent sx={{ 
@@ -299,14 +298,37 @@ const About = () => {
                                 Meet Adelpha "Eshie" Ellouise Magante
                             </Typography>
                             <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
-                                From the moment she stepped into the world, Adelpha "Eshie" Ellouise Magante has been a radiant soul—graceful, ambitious, and filled with dreams as grand as the Roaring Twenties. With a heart that beats for adventure and a mind that dreams in elegance, she embodies both timeless sophistication and modern ambition.
+                              Introducing <b>Adelpha Ellouise “Eshie” Macavinta Magante</b>, born on <b>September 23, 2007</b> in Tondo, Manila — a young woman whose life philosophy can be summed up in three words: <i>Live, Laugh, Love.</i>
                             </GatsbyParagraph>
+
                             <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
-                                Growing up, Eshie has always been drawn to the beauty of vintage glamour, the charm of classic music, and the stories told through fashion and art. Whether she's lost in a book, dancing to a jazz melody, or envisioning her future, she carries herself with the poise of a true Gatsby muse.
+                              From her early days at AkapBata daycare to her college years at <b>Pamantasan ng Lungsod ng Maynila</b>, Eshie’s journey has been filled with curiosity, creativity, and heart. Along the way, she has explored countless passions — from reading and writing stories, to painting and crafting with clay, to editing, singing, and even doing her own nails (and those of her family and friends!). She has always been someone who finds beauty in both the little details and the big adventures.
                             </GatsbyParagraph>
+
                             <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
-                                Now, as she steps into adulthood, she embraces this milestone with excitement, confidence, and an unwavering belief in chasing her dreams. Tonight, she invites you to celebrate a night of glitz, glamour, and unforgettable memories—just as Gatsby himself would have imagined.
+                              Her childhood was colored by unforgettable memories — mornings at the market with Nanay Nora, playful dress-up sessions with her siblings, and afternoons spent at SM San Lazaro’s Storyland. These simple moments, stitched together, became the foundation of her joyful and creative spirit.
                             </GatsbyParagraph>
+
+                            <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
+                              Eshie draws inspiration from her <b>family</b> and even from the ever-stylish Elle Woods, embracing both strength and elegance in her own way. A true night owl, she loves her coffee, adores her dogs, and has a soft spot for takoyaki, matcha, and yogurt. Her favorite color is pink, and if she could have any superpower, it would be invisibility — though her vibrant personality makes her far from invisible to those who know her best.
+                            </GatsbyParagraph>
+
+                            <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
+                              Her dreams shine as bright as tonight’s celebration. She hopes to pursue a career in psychology — Clinical or Developmental — and imagines herself, ten years from now, walking the streets of New York City with her beloved dogs by her side. Whether in Hong Kong, Japan, Barcelona, or even Cubao (her playful dream), she believes that happiness and ambition can coexist beautifully.
+                            </GatsbyParagraph>
+
+                            <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
+                              Guided by mottos like <i>“Para mi felicidad” (For my happiness)</i> and <i>“Que Sera Sera” (Whatever will be, will be)</i>, Eshie embraces life with gratitude. As she turns 18, she dedicates this milestone to her parents, family, friends, and every guest who has chosen to celebrate this grand night with her.
+                            </GatsbyParagraph>
+
+                            <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
+                              “Thank you so much — for the love, the support, and for being part of my journey. Everything I will do, I will do for my family, and for the happiness we share.” – <b>Eshie</b>
+                            </GatsbyParagraph>
+
+                            <GatsbyParagraph variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' } }}>
+                              Now, as she steps into adulthood, she embraces this milestone with excitement, confidence, and an unwavering belief in chasing her dreams. Tonight, she invites you to celebrate a night of glitz, glamour, and unforgettable memories—just as Gatsby himself would have imagined.
+                            </GatsbyParagraph>
+
                             <GatsbyQuote 
                                 sx={{ 
                                     mt: { xs: 3, sm: 4 },

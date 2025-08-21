@@ -128,7 +128,7 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
             letterSpacing={2} 
             color='#CF0A0A'
             sx={{ 
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
               textShadow: '3px 3px 6px rgba(0, 0, 0, 0.8)',
               marginBottom: 2,
               textAlign: 'center'
@@ -143,19 +143,21 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
               <Grid container direction={'row'} alignItems={'center'} justifyContent={'center'} mt={4} spacing={2}>
                 <Grid size={{ sm: 12, md: 6 }} spacing={2}>
                   <Box spacing={2}>
-                    <StyledTypography variant="h3">Date & Venue</StyledTypography>
-                    <StyledBodyTypography variant="h5">Saturday, September 27, 2025</StyledBodyTypography>
-                    <StyledBodyTypography variant="h5">6:00 PM - 10:00 PM</StyledBodyTypography>
-                    <StyledBodyTypography variant="h5" sx={{ fontWeight: 'bold' }} marginTop={4}>
+                    <Stack>
+                    <StyledTypography fontSize={{ xs: '2.5rem', sm: '3.5rem' }}>Date & Venue</StyledTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>Saturday, September 27, 2025</StyledBodyTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>6:00 PM - 10:00 PM</StyledBodyTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}} sx={{ fontWeight: 'bold' }} marginTop={4}>
                       The Grand Events Place 
                     </StyledBodyTypography>
-                    <StyledBodyTypography variant="h5">4th Floor, 2501 Rodriguez St., Balut, Tondo, Manila</StyledBodyTypography>
-                    <StyledBodyTypography variant="h5">(Landmark: Above Frapatea Cafe and Goldilocks)</StyledBodyTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>4th Floor, 2501 Rodriguez St., Balut, Tondo, Manila</StyledBodyTypography>
+                    <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>(Landmark: Above Frapatea Cafe and Goldilocks)</StyledBodyTypography>
+                    </Stack>
                   </Box>
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }}>
-                  <StyledTypography variant="h3">Dress Code</StyledTypography>
-                  <StyledBodyTypography variant="h5">
+                  <StyledTypography fontSize={{ xs: '2.5rem', sm: '3.5rem' }}>Dress Code</StyledTypography>
+                  <StyledBodyTypography variant={{md:"h6", lg:"h5"}}>
                     Feel free to come in semi-formal to formal wear – I'd love to see you in colors from this sweet palette!
                   </StyledBodyTypography>
                   <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
@@ -173,11 +175,11 @@ const EventDetails = ({ showSaveTheDateVideo = false }) => {
                   </StyledBodyTypography>
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }}>
-                  <StyledTypography variant="h3">Celebration Message</StyledTypography>
-                  <StyledBodyTypography variant="h5" sx={{ fontStyle: 'italic' }}>
+                  <StyledTypography fontSize={{ xs: '2.5rem', sm: '3.5rem' }}>Celebration Message</StyledTypography>
+                  <StyledBodyTypography variant={{md:"h6", lg:"h5"}} sx={{ fontStyle: 'italic' }}>
                     We're so excited to celebrate this special day with you!
                   </StyledBodyTypography>
-                  <StyledBodyTypography variant="h5" sx={{ mt: 2 }}>
+                  <StyledBodyTypography variant={{md:"h6", lg:"h5"}} sx={{ mt: 2 }}>
                     Get ready for a magical afternoon filled with laughter, love, and sweet memories!
                   </StyledBodyTypography>
                 </Grid>
